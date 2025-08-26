@@ -1,0 +1,4 @@
+{
+    "spotUrl": "https://explorer.hector.dkfz.de/backend/",
+    "sitesToQuery": ["dkfz", "uk"]
+}
