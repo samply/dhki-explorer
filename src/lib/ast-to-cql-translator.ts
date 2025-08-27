@@ -41,47 +41,47 @@ export const translateAstToCql = (
 
   singletons += resolveOperation(query);
 
-  let retrievalCriteria: string = "if InInitialPopulation then ";
+  // let retrievalCriteria: string = "if InInitialPopulation then ";
 
-  const additionalCriteria = processAdditionalCriterion(query);
-  if (
-    additionalCriteria == "" ||
-    additionalCriteria.substring(additionalCriteria.length - 1) == "("
-  ) {
-    retrievalCriteria += "[Specimen]";
-  } else if (
-    additionalCriteria.substring(additionalCriteria.length - 9) == "intersect"
-  ) {
-    retrievalCriteria += "[Specimen] S where " + additionalCriteria;
-    retrievalCriteria = retrievalCriteria.slice(0, -10);
-  } else {
-    retrievalCriteria += "[Specimen] S where " + additionalCriteria;
-    retrievalCriteria = retrievalCriteria.slice(0, -4);
-  }
+  // const additionalCriteria = processAdditionalCriterion(query);
+  // if (
+  //   additionalCriteria == "" ||
+  //   additionalCriteria.substring(additionalCriteria.length - 1) == "("
+  // ) {
+  //   retrievalCriteria += "[Specimen]";
+  // } else if (
+  //   additionalCriteria.substring(additionalCriteria.length - 9) == "intersect"
+  // ) {
+  //   retrievalCriteria += "[Specimen] S where " + additionalCriteria;
+  //   retrievalCriteria = retrievalCriteria.slice(0, -10);
+  // } else {
+  //   retrievalCriteria += "[Specimen] S where " + additionalCriteria;
+  //   retrievalCriteria = retrievalCriteria.slice(0, -4);
+  // }
 
-  retrievalCriteria = retrievalCriteria += " else {} as List<Specimen>";
-  const specimenMeasure = localMeasures.find(
-    (element) => element.key == "specimen",
-  );
-  if (specimenMeasure?.key) {
-    specimenMeasure.cql = specimenMeasure.cql + retrievalCriteria;
-  }
+  // retrievalCriteria = retrievalCriteria += " else {} as List<Specimen>";
+  // const specimenMeasure = localMeasures.find(
+  //   (element) => element.key == "specimen",
+  // );
+  // if (specimenMeasure?.key) {
+  //   specimenMeasure.cql = specimenMeasure.cql + retrievalCriteria;
+  // }
 
-  const histoMeasure = localMeasures.find((element) => element.key == "Histo");
-  if (histoMeasure?.cql) {
-    if (
-      !additionalCriteria.includes("type") ||
-      additionalCriteria.includes("tumor-tissue-ffpe")
-    ) {
-      histoMeasure.cql =
-        histoMeasure.cql +
-        " if histo.code.coding.where(code = '59847-4').code.first() is null then 0 else 1\n";
-    } else {
-      histoMeasure.cql =
-        histoMeasure.cql +
-        " if histo.code.coding.where(code = '59847-4').code.first() is null then 0 else 0\n";
-    }
-  }
+  // const histoMeasure = localMeasures.find((element) => element.key == "Histo");
+  // if (histoMeasure?.cql) {
+  //   if (
+  //     !additionalCriteria.includes("type") ||
+  //     additionalCriteria.includes("tumor-tissue-ffpe")
+  //   ) {
+  //     histoMeasure.cql =
+  //       histoMeasure.cql +
+  //       " if histo.code.coding.where(code = '59847-4').code.first() is null then 0 else 1\n";
+  //   } else {
+  //     histoMeasure.cql =
+  //       histoMeasure.cql +
+  //       " if histo.code.coding.where(code = '59847-4').code.first() is null then 0 else 0\n";
+  //   }
+  // }
 
   if (isQueryEmpty(query)) {
     singletons += "\ntrue";

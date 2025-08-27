@@ -1,5 +1,4 @@
 <script lang="ts">
-  // import "./app.css";
   import { onMount } from "svelte";
   import {
     setOptions,
@@ -64,6 +63,7 @@
         // markSiteClaimed(site);
       } else if (result.status === "succeeded") {
         const siteResult = JSON.parse(atob(result.body));
+        console.log(siteResult);
         setSiteResult(site, siteResult);
       } else {
         console.error(
@@ -74,17 +74,6 @@
     });
   });
 </script>
-
-<!-- <lens-search-button></lens-search-button>
-<lens-query-explain-button></lens-query-explain-button>
-<lens-search-bar></lens-search-bar>
-<lens-catalogue toggle={{collapsable: false}}></lens-catalogue>
-<lens-chart
-    title="Gender distribution"
-    dataKey="gender"
-    chartType="pie"
-    displayLegends="{true}"
-></lens-chart> -->
 
 <header class="card">
   <h1>DKFZ Hector Cancer Institute at the University Medicine Mannheim</h1>
@@ -105,27 +94,38 @@
   <div id="result-summary" class="card">
     <lens-result-summary></lens-result-summary>
   </div>
-  <div id="chart-gender" class="card">
+  <div class="card">
     <lens-chart
       title="Gender distribution"
-      dataKey="gender"
+      dataKey="Gender"
       chartType="pie"
       displayLegends={true}
     ></lens-chart>
   </div>
-  <div id="chart-age" class="card">
+  <div class="card">
     <lens-chart
       title="Age distribution"
-      dataKey="age_at_diagnosis"
+      dataKey="Age"
       chartType="bar"
+      backgroundColor={["#4dc9f6", "#3da4c7"]}
       xAxisTitle="Age"
       yAxisTitle="Patients"
+      groupRange={10}
     ></lens-chart>
   </div>
-  <div id="chart-therapy" class="card">
+  <div class="card">
     <lens-chart
       title="Type of therapy"
-      dataKey="therapy_of_tumor"
+      dataKey="ProcedureType"
+      chartType="bar"
+      xAxisTitle="Type of Therapy"
+      yAxisTitle="Therapies"
+    ></lens-chart>
+  </div>
+  <div class="card">
+    <lens-chart
+      title="Systemic Therapy"
+      dataKey="MedicationType"
       chartType="bar"
       xAxisTitle="Type of Therapy"
       yAxisTitle="Therapies"
