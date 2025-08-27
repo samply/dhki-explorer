@@ -118,6 +118,7 @@
       title="Type of therapy"
       dataKey="ProcedureType"
       chartType="bar"
+      backgroundColor={["#4dc9f6", "#3da4c7"]}
       xAxisTitle="Type of Therapy"
       yAxisTitle="Therapies"
     ></lens-chart>
@@ -127,6 +128,7 @@
       title="Systemic Therapy"
       dataKey="MedicationType"
       chartType="bar"
+      backgroundColor={["#4dc9f6", "#3da4c7"]}
       xAxisTitle="Type of Therapy"
       yAxisTitle="Therapies"
     ></lens-chart>
