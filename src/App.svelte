@@ -29,6 +29,14 @@
     setCatalogue(catalogue as Catalogue);
   });
 
+  let departments: Record<string, number> = $state({});
+
+  function updateDepartments(depts: Record<string, number>) {
+    for (const [key, value] of Object.entries(depts)) {
+      departments[key] = departments[key] ? departments[key] + value : value;
+    }
+  }
+
   let abortController = new AbortController();
   window.addEventListener("lens-search-triggered", () => {
     console.log("AST:", JSON.stringify(getAst()));
@@ -50,6 +58,7 @@
     );
 
     clearSiteResults();
+    departments = {};
     const query = btoa(
       JSON.stringify({
         lang: "cql",
@@ -65,6 +74,7 @@
         const siteResult = JSON.parse(atob(result.body));
         console.log(siteResult);
         setSiteResult(site, siteResult);
+        updateDepartments(siteResult.stratifiers.Departments);
       } else {
         console.error(
           `Site ${site} failed with status ${result.status}:`,
@@ -93,6 +103,25 @@
   </div>
   <div id="result-summary" class="card">
     <lens-result-summary></lens-result-summary>
+  </div>
+  <div id="department-table" class="card">
+    <h3>Associated Members</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Site</th>
+          <th>Cases</th>
+        </tr>
+      </thead>
+      <tbody>
+        {#each Object.entries(departments) as [dept, count] (dept)}
+          <tr>
+            <td>{dept}</td>
+            <td>{count}</td>
+          </tr>
+        {/each}
+      </tbody>
+    </table>
   </div>
   <div class="card">
     <lens-chart
@@ -131,6 +160,16 @@
       backgroundColor={["#4dc9f6", "#3da4c7"]}
       xAxisTitle="Type of Therapy"
       yAxisTitle="Therapies"
+    ></lens-chart>
+  </div>
+  <div id="chart-diagnosis" class="card">
+    <lens-chart
+      title="Diagnosis"
+      dataKey="diagnosis"
+      chartType="bar"
+      backgroundColor={["#4dc9f6", "#3da4c7"]}
+      xAxisTitle="ICD-10 Code"
+      yAxisTitle="Diagnoses"
     ></lens-chart>
   </div>
 </div>
@@ -184,12 +223,19 @@
 
     #catalogue {
       grid-column: 1 / 2;
-      grid-row: 1 / 3;
+      grid-row: 1 / 5;
     }
 
     #result-summary {
       grid-column: 2 / -1;
-      grid-row: 1 / 2;
+    }
+
+    #department-table {
+      grid-column: span 2;
+    }
+
+    #chart-diagnosis {
+      grid-column: 2 / -1;
     }
   }
 
