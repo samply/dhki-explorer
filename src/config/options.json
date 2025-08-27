@@ -1,4 +1,16 @@
 {
     "spotUrl": "https://explorer.hector.dkfz.de/backend/",
-    "sitesToQuery": ["dkfz", "uk"]
+    "sitesToQuery": [
+        "dkfz",
+        "uk"
+    ],
+    "resultSummaryOptions": {
+        "title": "Results",
+        "dataTypes": [
+            {
+                "title": "Patients",
+                "dataKey": "patients"
+            }
+        ]
+    }
 }

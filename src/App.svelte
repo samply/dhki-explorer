@@ -86,120 +86,119 @@
     displayLegends="{true}"
 ></lens-chart> -->
 
-<header>
-  <div class="header-wrapper">
-    <h1>
-      DKFZ Hector Cancer Institute <br /> at the University Medicine Mannheim
-    </h1>
-    <div class="logo">
-      <img src="../logo-dkfz.svg" alt="DKFZ" />
-    </div>
-    <div class="logo">
-      <img src="../logo_umm.svg" alt="UMM" />
-    </div>
-    <div class="logo">
-      <img src="../logo_mfm_ukm.svg" alt="MFM" />
-    </div>
-    <div class="logo">
-      <img src="../logo-hector.png" alt="Hector" />
-    </div>
-  </div>
+<header class="card">
+  <h1>DKFZ Hector Cancer Institute at the University Medicine Mannheim</h1>
+  <img src="../logo-dkfz.svg" alt="DKFZ" />
+  <img src="../logo_umm.svg" alt="UMM" />
+  <img src="../logo_mfm_ukm.svg" alt="MFM" />
+  <img src="../logo-hector.png" alt="Hector" />
 </header>
-<main>
-  <div class="search">
-    <div class="search-wrapper">
-      <lens-search-bar noMatchesFoundMessage="keine Ergebnisse gefunden"
-      ></lens-search-bar>
-      <lens-query-explain-button></lens-query-explain-button>
-      <lens-search-button title="Suchen"></lens-search-button>
-    </div>
+<div id="search-wrapper">
+  <lens-search-bar></lens-search-bar>
+  <lens-query-explain-button></lens-query-explain-button>
+  <lens-search-button></lens-search-button>
+</div>
+<div id="main-grid">
+  <div id="catalogue" class="card">
+    <lens-catalogue toggle={{ collapsable: false }}></lens-catalogue>
   </div>
-  <div class="grid">
-    <div class="catalogue-wrapper">
-      <div class="catalogue">
-        <lens-catalogue
-          toggleIconUrl="right-arrow-svgrepo-com.svg"
-          toggle={{ collapsable: false }}
-          addIconUrl="long-right-arrow-svgrepo-com.svg"
-        ></lens-catalogue>
-      </div>
-    </div>
-    <div class="charts">
-      <div class="chart-wrapper result-summary">
-        <lens-result-summary></lens-result-summary>
-        <lens-search-modified-display
-          >Diagramme repräsentieren nicht mehr die aktuelle Suche!</lens-search-modified-display
-        >
-      </div>
-      <div class="chart-wrapper chart-diagnosis">
-        <lens-chart
-          title="Diagnose"
-          catalogueGroupCode="diagnosis"
-          chartType="bar"
-          indexAxis="y"
-          groupingDivider="."
-          groupingLabel=".%"
-          filterRegex="^[CD].*"
-          xAxisTitle="Anzahl der Diagnosen"
-          yAxisTitle="ICD-10-Codes"
-        ></lens-chart>
-      </div>
-      <div class="chart-wrapper">
-        <lens-chart
-          title="Geschlecht"
-          catalogueGroupCode="gender"
-          chartType="pie"
-          displayLegends={true}
-        ></lens-chart>
-      </div>
-      <div class="chart-wrapper chart-age-distribution">
-        <lens-chart
-          title="Alter bei Erstdiagnose"
-          catalogueGroupCode="age_at_diagnosis"
-          chartType="bar"
-          groupRange={10}
-          filterRegex="^(([0-9]?[0-9]$)|(1[0-2]0))"
-          xAxisTitle="Alter"
-          yAxisTitle="Anzahl der Primärdiagnosen"
-        ></lens-chart>
-      </div>
-      <div class="chart-wrapper">
-        <lens-chart
-          title="Vitalstatus"
-          catalogueGroupCode="75186-7"
-          chartType="pie"
-          displayLegends={true}
-        ></lens-chart>
-      </div>
-      <div class="chart-wrapper">
-        <lens-chart
-          title="Therapieart"
-          catalogueGroupCode="therapy_of_tumor"
-          chartType="bar"
-          xAxisTitle="Art der Therapie"
-          yAxisTitle="Anzahl der Therapieeinträge"
-        ></lens-chart>
-      </div>
-      <div class="chart-wrapper">
-        <lens-chart
-          title="Proben"
-          catalogueGroupCode="sample_kind"
-          chartType="bar"
-          xAxisTitle="Probentypen"
-          yAxisTitle="Probenanzahl"
-          filterRegex="^(?!(tissue-other|buffy-coat|peripheral-blood-cells|dried-whole-blood|swab|ascites|stool-faeces|saliva|liquid-other|derivative-other))"
-        >
-        </lens-chart>
-      </div>
-    </div>
+  <div id="result-summary" class="card">
+    <lens-result-summary></lens-result-summary>
   </div>
-</main>
-
-<footer>
-  <div>
-    Made with ♥ and <a href="https://github.com/samply/lens">samply/lens</a>.
+  <div id="chart-gender" class="card">
+    <lens-chart
+      title="Gender distribution"
+      dataKey="gender"
+      chartType="pie"
+      displayLegends={true}
+    ></lens-chart>
   </div>
-  <div class="logo logo-footer">
-    <img src="../dktk-en.png" alt="DKTK" />
+  <div id="chart-age" class="card">
+    <lens-chart
+      title="Age distribution"
+      dataKey="age_at_diagnosis"
+      chartType="bar"
+      xAxisTitle="Age"
+      yAxisTitle="Patients"
+    ></lens-chart>
   </div>
+  <div id="chart-therapy" class="card">
+    <lens-chart
+      title="Type of therapy"
+      dataKey="therapy_of_tumor"
+      chartType="bar"
+      xAxisTitle="Type of Therapy"
+      yAxisTitle="Therapies"
+    ></lens-chart>
+  </div>
+</div>
+<footer class="card">
+  <p>
+    Made with ♥ and <a href="https://github.com/samply/lens">samply/lens</a>
+  </p>
+  <img src="../dktk-en.png" alt="DKTK" />
 </footer>
+
+<style>
+  :root {
+    background-color: #f8f8ff;
+  }
+
+  .card {
+    background-color: white;
+    border-radius: var(--border-radius-small);
+    border: 1px solid var(--lightest-gray);
+    padding: var(--gap-xs);
+  }
+
+  header {
+    margin: var(--gap-xs);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h1 {
+      color: var(--blue);
+    }
+    img {
+      max-height: 5rem;
+    }
+  }
+
+  #search-wrapper {
+    margin: var(--gap-xs);
+    display: flex;
+    gap: var(--gap-xs);
+    lens-search-bar {
+      flex-grow: 1;
+    }
+  }
+
+  #main-grid {
+    margin: var(--gap-xs);
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: var(--gap-xs);
+
+    #catalogue {
+      grid-column: 1 / 2;
+      grid-row: 1 / 3;
+    }
+
+    #result-summary {
+      grid-column: 2 / -1;
+      grid-row: 1 / 2;
+    }
+  }
+
+  footer {
+    margin: var(--gap-xs);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    img {
+      max-height: 3rem;
+    }
+  }
+</style>
