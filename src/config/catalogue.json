@@ -2,7 +2,8 @@
     {
         "key": "patient",
         "name": "Patient",
-        "fieldType": "group", "childCategories": [
+        "fieldType": "group",
+        "childCategories": [
             {
                 "key": "consent-hki",
                 "name": "Consent",
@@ -12,8 +13,7 @@
                 "criteria": [
                     {
                         "key": "Consented DKFZ Hector CI Patient",
-                        "name": "Consented DKFZ Hector CI Patient",
-                        "description": "DKFZ Hector CI"
+                        "name": "DKFZ Hector CI"
                     }
                 ]
             },
@@ -26,23 +26,19 @@
                 "criteria": [
                     {
                         "key": "male",
-                        "name": "male",
-                        "description": "male"
+                        "name": "male"
                     },
                     {
                         "key": "female",
-                        "name": "female",
-                        "description": "female"
+                        "name": "female"
                     },
                     {
                         "key": "other",
-                        "name": "other",
-                        "description": "other"
+                        "name": "other"
                     },
                     {
                         "key": "unknown",
-                        "name": "unknown",
-                        "description": "unknown"
+                        "name": "unknown"
                     }
                 ]
             },
@@ -55,13 +51,11 @@
                 "criteria": [
                     {
                         "key": "lebend",
-                        "name": "lebend",
-                        "description": "alive"
+                        "name": "alive"
                     },
                     {
                         "key": "verstorben",
-                        "name": "verstorben",
-                        "description": "deceased"
+                        "name": "deceased"
                     }
                 ]
             }
@@ -70,7 +64,8 @@
     {
         "key": "Organization1",
         "name": "Organisation",
-        "fieldType": "group", "childCategories": [
+        "fieldType": "group",
+        "childCategories": [
             {
                 "key": "Organization1",
                 "name": "Associated Members",
@@ -80,48 +75,39 @@
                 "criteria": [
                     {
                         "key": "UMM/ Chirurgische Klinik",
-                        "name": "UMM/ Chirurgische Klinik",
-                        "description": "Surgery"
+                        "name": "Surgery"
                     },
                     {
                         "key": "UMM/Dermatologie, Venerologie, Allergologie",
-                        "name": "UMM/Dermatologie, Venerologie, Allergologie",
-                        "description": "Dermatology, Venereology and Allergology"
+                        "name": "Dermatology, Venereology and Allergology"
                     },
                     {
                         "key": "UMM/ Frauenklinik",
-                        "name": "UMM/ Frauenklinik",
-                        "description": "Gynecology & Obstetrics"
+                        "name": "Gynecology & Obstetrics"
                     },
                     {
                         "key": "UMM/ Klinik für Urologie",
-                        "name": "UMM/ Klinik für Urologie",
-                        "description": "Urology"
+                        "name": "Urology"
                     },
                     {
                         "key": "UMM/ Klinik fÃ¼r Strahlentherapie und Radioonkologie",
-                        "name": "UMM/ Klinik fÃ¼r Strahlentherapie und Radioonkologie",
-                        "description": "Radiotherapy and radiooncology"
+                        "name": "Radiotherapy and radiooncology"
                     },
                     {
                         "key": "UMM/ 2. Medizinische Klinik/Gastroenterologie",
-                        "name": "UMM/ 2. Medizinische Klinik/Gastroenterologie",
-                        "description": "II. Department of Medicine"
+                        "name": "II. Department of Medicine"
                     },
                     {
                         "key": "UMM/ 3. Medizinische Klinik/ TTZ",
-                        "name": "UMM/ 3. Medizinische Klinik/ TTZ",
-                        "description": "III. Department of Medicine / TTZ / Personalized Medical Oncology"
+                        "name": "III. Department of Medicine / TTZ / Personalized Medical Oncology"
                     },
                     {
                         "key": "UMM/ Radiologie und Nuklearmedizin",
-                        "name": "UMM/ Radiologie und Nuklearmedizin",
-                        "description": "Radiology and nuclear medicine"
+                        "name": "Radiology and nuclear medicine"
                     },
                     {
                         "key": "HKI - Personalisierte Onkologie",
-                        "name": "HKI - Personalisierte Onkologie",
-                        "description": "Translational Clinical Trial Unit at DKFZ Hector CI"
+                        "name": "Translational Clinical Trial Unit at DKFZ Hector CI"
                     }
                 ]
             }
@@ -130,11 +116,13 @@
     {
         "key": "tumor_entity",
         "name": "Tumor Entity",
-        "fieldType": "group", "childCategories": [
+        "fieldType": "group",
+        "childCategories": [
             {
                 "key": "urn:dktk:code:2:2",
                 "name": "Neurooncology",
-                "fieldType": "group", "childCategories": [
+                "fieldType": "group",
+                "childCategories": [
                     {
                         "key": "gliom_all_groups",
                         "name": "Gliomas, all groups",
@@ -145,7 +133,6 @@
                             {
                                 "key": "urn:dktk:code:3:2",
                                 "name": "Glioma - Grade I",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -176,7 +163,6 @@
                             {
                                 "key": "urn:dktk:code:4:2",
                                 "name": "Glioma - Grade II",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -219,7 +205,6 @@
                             {
                                 "key": "urn:dktk:code:5:2",
                                 "name": "Glioma - Grade III",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -254,7 +239,6 @@
                             {
                                 "key": "urn:dktk:code:6:2",
                                 "name": "Glioma - Grade IV",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -294,7 +278,6 @@
                             {
                                 "key": "urn:dktk:code:7:2",
                                 "name": "Choroid Plexus Neoplasia - Grade II",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -313,7 +296,6 @@
                             {
                                 "key": "urn:dktk:code:8:2",
                                 "name": "Choroid Plexus Neoplasia - Grade III",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -332,7 +314,6 @@
                             {
                                 "key": "urn:dktk:code:10:2",
                                 "name": "Neuroepitheliomatous Neoplasia - Grade II",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -351,7 +332,6 @@
                             {
                                 "key": "urn:dktk:code:9:2",
                                 "name": "Neuroepitheliomatous Neoplasia - Grade I",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -382,7 +362,6 @@
                             {
                                 "key": "urn:dktk:code:11:2",
                                 "name": "Neuroepitheliomatous Neoplasia - Grade III",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -405,7 +384,6 @@
                             {
                                 "key": "urn:dktk:code:12:2",
                                 "name": "Tumor of cranial and spinal nerves - Grade III",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -424,7 +402,6 @@
                             {
                                 "key": "urn:dktk:code:13:2",
                                 "name": "Tumor of cranial and spinal nerves - Grade II-IV",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -452,7 +429,6 @@
                             {
                                 "key": "urn:dktk:code:14:2",
                                 "name": "Meningeal Neoplasia - Grade III",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -479,7 +455,6 @@
                             {
                                 "key": "urn:dktk:code:15:2",
                                 "name": "Medulloblastoma - Grade IV",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -510,7 +485,6 @@
                             {
                                 "key": "urn:dktk:code:16:2",
                                 "name": "Neuroectodermal Tumor - Grade IV",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -549,7 +523,6 @@
                             {
                                 "key": "urn:dktk:code:17:2",
                                 "name": "Atypical Teratoid/Rhabdoid Tumor - Grade IV",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -581,7 +554,6 @@
                             {
                                 "key": "urn:dktk:code:18:2",
                                 "name": "Gliosarcoma",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -625,7 +597,6 @@
                             {
                                 "key": "urn:dktk:code:19:2",
                                 "name": "CNS Lymphoma (Diffuse Large B-cell Lymphoma)",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -648,7 +619,8 @@
             {
                 "key": "urn:dktk:code:20:2",
                 "name": "Head and Neck Cancer",
-                "fieldType": "group", "childCategories": [
+                "fieldType": "group",
+                "childCategories": [
                     {
                         "key": "kopf_hals_ca",
                         "name": "Head and Neck Cancer, all groups",
@@ -659,7 +631,6 @@
                             {
                                 "key": "urn:dktk:code:21:2",
                                 "name": "Oral Cavity: Squamous Cell Carcinoma",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -726,7 +697,6 @@
                             {
                                 "key": "urn:dktk:code:25:2",
                                 "name": "Hypopharynx: Squamous Cell Carcinoma",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -761,7 +731,6 @@
                             {
                                 "key": "urn:dktk:code:22:2",
                                 "name": "Salivary Gland: Adenocarcinoma",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -804,7 +773,6 @@
                             {
                                 "key": "urn:dktk:code:27:2",
                                 "name": "Nasal Cavity, Paranasal Sinuses, and Middle Ear: Squamous Cell Carcinoma",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -843,7 +811,6 @@
                             {
                                 "key": "urn:dktk:code:24:2",
                                 "name": "Nasopharynx: Squamous Cell Carcinoma",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -882,7 +849,6 @@
                             {
                                 "key": "urn:dktk:code:23:2",
                                 "name": "Oropharynx: Squamous Cell Carcinoma",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -925,7 +891,6 @@
                             {
                                 "key": "urn:dktk:code:26:2",
                                 "name": "General Oral Cavity/Pharynx: Squamous Cell Carcinoma",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -960,7 +925,6 @@
                             {
                                 "key": "urn:dktk:code:30:2",
                                 "name": "Larynx - Subglottis: Squamous Cell Carcinoma",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -995,7 +959,6 @@
                             {
                                 "key": "urn:dktk:code:28:2",
                                 "name": "Larynx - Glottis: Squamous Cell Carcinoma",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -1030,7 +993,6 @@
                             {
                                 "key": "urn:dktk:code:29:2",
                                 "name": "Larynx - Supraglottis: Squamous Cell Carcinoma",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -1065,7 +1027,6 @@
                             {
                                 "key": "urn:dktk:code:31:2",
                                 "name": "Larynx - Other: Squamous Cell Carcinoma",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -1117,7 +1078,6 @@
                             {
                                 "key": "urn:dktk:code:32:2",
                                 "name": "Cancer of unknown primary (CUP): Squamous Cell Carcinoma",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -1156,7 +1116,6 @@
                             {
                                 "key": "urn:dktk:code:33:2",
                                 "name": "Cancer of unknown primary (CUP)-extranodal: Squamous Cell Carcinoma",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -1195,7 +1154,8 @@
             {
                 "key": "urn:dktk:code:34:2",
                 "name": "Thoracic Oncology",
-                "fieldType": "group", "childCategories": [
+                "fieldType": "group",
+                "childCategories": [
                     {
                         "key": "nsclc",
                         "name": "NSCLC, all groups",
@@ -1206,7 +1166,6 @@
                             {
                                 "key": "urn:dktk:code:35:2",
                                 "name": "NSCLC: Adenocarcinoma",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -1289,7 +1248,6 @@
                             {
                                 "key": "urn:dktk:code:41:2",
                                 "name": "NSCLC, other: NOS",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -1324,7 +1282,6 @@
                             {
                                 "key": "urn:dktk:code:42:2",
                                 "name": "NSCLC, other: Combined NOS",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -1351,7 +1308,6 @@
                             {
                                 "key": "urn:dktk:code:36:2",
                                 "name": "NSCLC: Squamous Cell Carcinoma",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -1386,7 +1342,6 @@
                             {
                                 "key": "urn:dktk:code:38:2",
                                 "name": "NSCLC, other: Large Cell Carcinoma",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -1413,7 +1368,6 @@
                             {
                                 "key": "urn:dktk:code:40:2",
                                 "name": "NSCLC, other: Salivary Gland-like Carcinoma",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -1448,7 +1402,6 @@
                             {
                                 "key": "urn:dktk:code:37:2",
                                 "name": "NSCLC, other: Adenosquamous Carcinoma",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -1467,7 +1420,6 @@
                             {
                                 "key": "urn:dktk:code:39:2",
                                 "name": "NSCLC, other: Sarcomatoid Carcinoma",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -1519,7 +1471,6 @@
                             {
                                 "key": "urn:dktk:code:43:2",
                                 "name": "SCLC (without neuroendocrine carcinoma)",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -1563,7 +1514,6 @@
                             {
                                 "key": "urn:dktk:code:44:2",
                                 "name": "Neuroendocrine Carcinoma (without SCLC)",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -1607,7 +1557,6 @@
                             {
                                 "key": "urn:dktk:code:45:2",
                                 "name": "Lung Sarcoma",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -1655,7 +1604,6 @@
                             {
                                 "key": "urn:dktk:code:46:2",
                                 "name": "Thymoma",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -1707,7 +1655,6 @@
                             {
                                 "key": "urn:dktk:code:47:2",
                                 "name": "Malignant Mesothelioma",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -1742,7 +1689,8 @@
             {
                 "key": "urn:dktk:code:34:2",
                 "name": "Gastrointestinal Oncology",
-                "fieldType": "group", "childCategories": [
+                "fieldType": "group",
+                "childCategories": [
                     {
                         "key": "ösophagus",
                         "name": "Esophageal/Gastric Junction Cancer, all groups",
@@ -1753,7 +1701,6 @@
                             {
                                 "key": "urn:dktk:code:49:2",
                                 "name": "Esophagus: Adenocarcinoma",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -1796,7 +1743,6 @@
                             {
                                 "key": "urn:dktk:code:50:2",
                                 "name": "Esophagus: Squamous Cell Carcinoma",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -1827,7 +1773,6 @@
                             {
                                 "key": "urn:dktk:code:51:2",
                                 "name": "Esophagus: Barrett's Carcinoma",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -1866,7 +1811,6 @@
                             {
                                 "key": "urn:dktk:code:52:2",
                                 "name": "Gastric Junction: Adenocarcinoma",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -1926,7 +1870,6 @@
                             {
                                 "key": "urn:dktk:code:53:2",
                                 "name": "Gastric: Adenocarcinoma",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -1997,7 +1940,6 @@
                             {
                                 "key": "urn:dktk:code:54:2",
                                 "name": "Gastric: Linitis plastica",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -2053,7 +1995,6 @@
                             {
                                 "key": "urn:dktk:code:55:2",
                                 "name": "Gastrointestinal: Squamous Cell Carcinoma",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -2120,7 +2061,6 @@
                             {
                                 "key": "urn:dktk:code:56:2",
                                 "name": "Small Intestine: Adenocarcinoma",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -2179,7 +2119,6 @@
                             {
                                 "key": "urn:dktk:code:57:2",
                                 "name": "Colorectal: Adenocarcinoma",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -2246,7 +2185,6 @@
                             {
                                 "key": "urn:dktk:code:58:2",
                                 "name": "Anal: Adenocarcinoma",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -2290,7 +2228,6 @@
                             {
                                 "key": "urn:dktk:code:59:2",
                                 "name": "Liver: HCC",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -2329,7 +2266,6 @@
                             {
                                 "key": "urn:dktk:code:61:2",
                                 "name": "Liver: CCC",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -2356,7 +2292,6 @@
                             {
                                 "key": "urn:dktk:code:60:2",
                                 "name": "Liver: fibrolamellar Ca",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -2375,7 +2310,6 @@
                             {
                                 "key": "urn:dktk:code:62:2",
                                 "name": "Liver/Bile Duct, other",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -2427,7 +2361,6 @@
                             {
                                 "key": "urn:dktk:code:63:2",
                                 "name": "Pancreas: Mucinous Adenocarcinoma",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -2458,7 +2391,6 @@
                             {
                                 "key": "urn:dktk:code:64:2",
                                 "name": "Pancreas, other",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -2550,7 +2482,6 @@
                             {
                                 "key": "urn:dktk:code:66:2",
                                 "name": "Neuroendocrine Tumor (NET) - Grade II",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -2563,7 +2494,6 @@
                             {
                                 "key": "urn:dktk:code:67:2",
                                 "name": "Neuroendocrine Tumor (NET) - Grade III-IV",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -2584,7 +2514,6 @@
                             {
                                 "key": "urn:dktk:code:65:2",
                                 "name": "Neuroendocrine Tumor (NET) - Grade I",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -2612,7 +2541,6 @@
                             {
                                 "key": "urn:dktk:code:68:2",
                                 "name": "Neuroendocrine Tumor (NET): Mixed Adeno-Neuroendocrine Carcinoma\n",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -2634,7 +2562,6 @@
                             {
                                 "key": "urn:dktk:code:69:2",
                                 "name": "Gastrointestinal Stromal Tumor (GIST)",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -2706,7 +2633,6 @@
                             {
                                 "key": "urn:dktk:code:70:2",
                                 "name": "MALT-Lymphoma",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -2729,7 +2655,8 @@
             {
                 "key": "urn:dktk:code:48:2",
                 "name": "Gynecological oncology",
-                "fieldType": "group", "childCategories": [
+                "fieldType": "group",
+                "childCategories": [
                     {
                         "key": "mamma-ca",
                         "name": "Mamma-Ca",
@@ -2740,7 +2667,6 @@
                             {
                                 "key": "urn:dktk:code:72:2",
                                 "name": "Breast Cancer",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -2843,7 +2769,6 @@
                             {
                                 "key": "urn:dktk:code:73:2",
                                 "name": "Breast Cancer (in situ)",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -2895,7 +2820,6 @@
                             {
                                 "key": "urn:dktk:code:76:2",
                                 "name": "Cervical Cancer",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -2982,7 +2906,6 @@
                             {
                                 "key": "urn:dktk:code:77:2",
                                 "name": "Endometrial Cancer",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -3041,7 +2964,6 @@
                             {
                                 "key": "urn:dktk:code:74:2",
                                 "name": "Vulvar Cancer",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -3088,7 +3010,6 @@
                             {
                                 "key": "urn:dktk:code:75:2",
                                 "name": "Vaginal Tumor",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -3155,7 +3076,6 @@
                             {
                                 "key": "urn:dktk:code:80:2",
                                 "name": "Uterine Sarcoma",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -3215,7 +3135,6 @@
                             {
                                 "key": "urn:dktk:code:78:2",
                                 "name": "Ovarian Cancer",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -3262,7 +3181,6 @@
                             {
                                 "key": "urn:dktk:code:79:2",
                                 "name": "Other Ovarian Tumor",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -3309,7 +3227,8 @@
             {
                 "key": "urn:dktk:code:71:2",
                 "name": "Urological Oncology",
-                "fieldType": "group", "childCategories": [
+                "fieldType": "group",
+                "childCategories": [
                     {
                         "key": "penis_ca",
                         "name": "Penile Cancer, all groups",
@@ -3320,7 +3239,6 @@
                             {
                                 "key": "urn:dktk:code:82:2",
                                 "name": "Penile Squamous Cell Carcinoma",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -3375,7 +3293,6 @@
                             {
                                 "key": "urn:dktk:code:83:2",
                                 "name": "Penile Cancer, Other",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -3443,7 +3360,6 @@
                             {
                                 "key": "urn:dktk:code:84:2",
                                 "name": "Prostate: Adenocarcinoma",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -3474,7 +3390,6 @@
                             {
                                 "key": "urn:dktk:code:85:2",
                                 "name": "Prostata-Ca, other",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -3510,7 +3425,6 @@
                             {
                                 "key": "urn:dktk:code:86:2",
                                 "name": "Neuroendokriner Tumor",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -3538,7 +3452,6 @@
                             {
                                 "key": "urn:dktk:code:88:2",
                                 "name": "Hoden-Ca: Nicht-Seminom",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -3577,7 +3490,6 @@
                             {
                                 "key": "urn:dktk:code:87:2",
                                 "name": "Hoden-Ca: Seminom",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -3604,7 +3516,6 @@
                             {
                                 "key": "urn:dktk:code:89:2",
                                 "name": "Hoden-Ca: Nicht-germinaler Hodentumor",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -3627,7 +3538,6 @@
                             {
                                 "key": "urn:dktk:code:90:2",
                                 "name": "Hoden-Ca, anderes",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -3659,7 +3569,6 @@
                             {
                                 "key": "urn:dktk:code:91:2",
                                 "name": "Nierenzell-Ca: klarzellig",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -3682,7 +3591,6 @@
                             {
                                 "key": "urn:dktk:code:92:2",
                                 "name": "Nierenzell-Ca: papillär",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -3701,7 +3609,6 @@
                             {
                                 "key": "urn:dktk:code:93:2",
                                 "name": "Nierenzell-Ca: chromophob",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -3724,7 +3631,6 @@
                             {
                                 "key": "urn:dktk:code:94:2",
                                 "name": "Nierenzell-Ca, anderes",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -3776,7 +3682,6 @@
                             {
                                 "key": "urn:dktk:code:95:2",
                                 "name": "Urothel-Ca",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -3824,7 +3729,6 @@
                             {
                                 "key": "urn:dktk:code:96:2",
                                 "name": "Harnblase: Plattenepithel-Ca",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -3879,7 +3783,6 @@
                             {
                                 "key": "urn:dktk:code:97:2",
                                 "name": "Harnblase: Adeno-Ca",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -3906,7 +3809,6 @@
                             {
                                 "key": "urn:dktk:code:98:2",
                                 "name": "Harnblasen-Ca, anderes",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -3957,7 +3859,8 @@
             {
                 "key": "urn:dktk:code:81:2",
                 "name": "Dermatological oncology",
-                "fieldType": "group", "childCategories": [
+                "fieldType": "group",
+                "childCategories": [
                     {
                         "key": "malignes_melanom",
                         "name": "Malignes Melanom",
@@ -3968,7 +3871,6 @@
                             {
                                 "key": "urn:dktk:code:100:2",
                                 "name": "Malignes Melanom",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -4119,7 +4021,6 @@
                             {
                                 "key": "urn:dktk:code:101:2",
                                 "name": "Malignes Melanom (in situ)",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -4159,7 +4060,6 @@
                             {
                                 "key": "urn:dktk:code:102:2",
                                 "name": "Mukosales Melanom",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -4263,7 +4163,6 @@
                             {
                                 "key": "urn:dktk:code:103:2",
                                 "name": "Basalzell-Ca",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -4319,7 +4218,6 @@
                             {
                                 "key": "urn:dktk:code:104:2",
                                 "name": "Plattenepithel-Ca",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -4394,7 +4292,6 @@
                             {
                                 "key": "urn:dktk:code:105:2",
                                 "name": "Plattenepithel-Ca (in situ)",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -4446,7 +4343,6 @@
                             {
                                 "key": "urn:dktk:code:106:2",
                                 "name": "Sonstiger Hauttumor",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -4562,7 +4458,6 @@
                             {
                                 "key": "urn:dktk:code:107:2",
                                 "name": "Kutanes Sarkom",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -4710,7 +4605,6 @@
                             {
                                 "key": "urn:dktk:code:108:2",
                                 "name": "Kutanes Lymphom",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -4781,7 +4675,8 @@
             {
                 "key": "urn:dktk:code:109:2",
                 "name": "Hematological neoplasms",
-                "fieldType": "group", "childCategories": [
+                "fieldType": "group",
+                "childCategories": [
                     {
                         "key": "lymph_leukämie",
                         "name": "Lymphatische Leukämie",
@@ -4792,7 +4687,6 @@
                             {
                                 "key": "urn:dktk:code:110:2",
                                 "name": "Lymphatische Leukämie: Akute lymphatische Leukämie",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -4851,7 +4745,6 @@
                             {
                                 "key": "urn:dktk:code:113:2",
                                 "name": "Lymphatische Leukämie: Burkitt-Leukämie",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -4870,7 +4763,6 @@
                             {
                                 "key": "urn:dktk:code:112:2",
                                 "name": "Lymphatische Leukämie: Chronische lymphatische Leukämie",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -4889,7 +4781,6 @@
                             {
                                 "key": "urn:dktk:code:114:2",
                                 "name": "Lymphatische Leukämie: Prolymphozytenleukämie",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -4920,7 +4811,6 @@
                             {
                                 "key": "urn:dktk:code:115:2",
                                 "name": "Lymphatische Leukämie: Sonstige",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -4956,7 +4846,6 @@
                             {
                                 "key": "urn:dktk:code:111:2",
                                 "name": "Akute Leukämie - gemischter Phänotyp",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -5000,7 +4889,6 @@
                             {
                                 "key": "urn:dktk:code:116:2",
                                 "name": "Myeloische Leukämie: Akute myeloische Leukämie",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -5115,7 +5003,6 @@
                             {
                                 "key": "urn:dktk:code:117:2",
                                 "name": "Myeloische Leukämie: Akute Promyelozytenleukämie",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -5134,7 +5021,6 @@
                             {
                                 "key": "urn:dktk:code:118:2",
                                 "name": "Myeloische Leukämie: Chronische myeloische Leukämie",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -5174,7 +5060,6 @@
                             {
                                 "key": "urn:dktk:code:119:2",
                                 "name": "Chronische myeloproliferative Erkrankung: Polycythaemia vera",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -5193,7 +5078,6 @@
                             {
                                 "key": "urn:dktk:code:121:2",
                                 "name": "Chronische myeloproliferative Erkrankung: Essentielle Thrombozytämie",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -5212,7 +5096,6 @@
                             {
                                 "key": "urn:dktk:code:120:2",
                                 "name": "Chronische myeloproliferative Erkrankung: Primäre Myelofibrose",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -5231,7 +5114,6 @@
                             {
                                 "key": "urn:dktk:code:122:2",
                                 "name": "Chronische myeloproliferative Erkrankung, andere",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -5283,7 +5165,6 @@
                             {
                                 "key": "urn:dktk:code:123:2",
                                 "name": "Myelodysplastisches Syndrom",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -5367,7 +5248,6 @@
                             {
                                 "key": "urn:dktk:code:124:2",
                                 "name": "Multiples Myelom",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -5411,7 +5291,6 @@
                             {
                                 "key": "urn:dktk:code:125:2",
                                 "name": "NK-Zell-Leukämie, aggressiv",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -5439,7 +5318,6 @@
                             {
                                 "key": "urn:dktk:code:126:2",
                                 "name": "Hodgkin-Lymphom",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -5515,7 +5393,6 @@
                             {
                                 "key": "urn:dktk:code:134:2",
                                 "name": "Non-Hodgkin-Lymphom: Burkitt-Lymphom",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -5534,7 +5411,6 @@
                             {
                                 "key": "urn:dktk:code:113:2",
                                 "name": "Lymphatische Leukämie: Burkitt-Leukämie",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -5562,7 +5438,6 @@
                             {
                                 "key": "urn:dktk:code:129:2",
                                 "name": "Non-Hodgkin-Lymphom: Marginalzonen-B-Zell-Lymphom",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -5585,7 +5460,6 @@
                             {
                                 "key": "urn:dktk:code:128:2",
                                 "name": "Non-Hodgkin-Lymphom: Anderes kleinzelliges Lymphom",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -5608,7 +5482,6 @@
                             {
                                 "key": "urn:dktk:code:127:2",
                                 "name": "Non-Hodgkin-Lymphom: Follikuläres Lymphom",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -5639,7 +5512,6 @@
                             {
                                 "key": "urn:dktk:code:131:2",
                                 "name": "Non-Hodgkin-Lymphom: Reifzelliges T-Zell-Lymphom",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -5718,7 +5590,6 @@
                             {
                                 "key": "urn:dktk:code:130:2",
                                 "name": "Non-Hodgkin-Lymphom: Haarzell-Leukämie",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -5737,7 +5608,6 @@
                             {
                                 "key": "urn:dktk:code:132:2",
                                 "name": "Non-Hodgkin-Lymphom: Großzelliges anaplastisches Lymphom",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -5760,7 +5630,6 @@
                             {
                                 "key": "urn:dktk:code:135:2",
                                 "name": "Non-Hodgkin-Lymphom: Diffus großzelliges Lymphom",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -5811,7 +5680,6 @@
                             {
                                 "key": "urn:dktk:code:133:2",
                                 "name": "Non-Hodgkin-Lymphom: Mantelzell-Lymphom",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -5830,7 +5698,6 @@
                             {
                                 "key": "urn:dktk:code:134:2",
                                 "name": "Non-Hodgkin-Lymphom: Burkitt-Lymphom",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -5849,7 +5716,6 @@
                             {
                                 "key": "urn:dktk:code:136:2",
                                 "name": "Non-Hodgkin-Lymphom: Lymphoblastisches Lymphom",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -5885,7 +5751,6 @@
                             {
                                 "key": "urn:dktk:code:137:2",
                                 "name": "Mastzelllymphom",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -5928,7 +5793,6 @@
                             {
                                 "key": "urn:dktk:code:138:2",
                                 "name": "Neoplasie der Histiozyten und akzessorischer lymphoider Zellen",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -5995,7 +5859,6 @@
                             {
                                 "key": "urn:dktk:code:139:2",
                                 "name": "Immunoproliferative Krankheit",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -6054,7 +5917,8 @@
             {
                 "key": "urn:dktk:code:140:2",
                 "name": "Sarcomas",
-                "fieldType": "group", "childCategories": [
+                "fieldType": "group",
+                "childCategories": [
                     {
                         "key": "ewing_sarkom",
                         "name": "Ewing-Sarkom",
@@ -6065,7 +5929,6 @@
                             {
                                 "key": "urn:dktk:code:141:2",
                                 "name": "Ewing-Sarkom",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -6088,7 +5951,6 @@
                             {
                                 "key": "urn:dktk:code:142:2",
                                 "name": "Ewing-Sarkom: Soft Tissue Ewing Sarkom",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -6148,7 +6010,6 @@
                             {
                                 "key": "urn:dktk:code:143:2",
                                 "name": "Osteosarkom/Chondrosarkom",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -6184,7 +6045,6 @@
                             {
                                 "key": "urn:dktk:code:144:2",
                                 "name": "Kaposi-Sarkom",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -6216,7 +6076,6 @@
                             {
                                 "key": "urn:dktk:code:145:2",
                                 "name": "Adipozytäres Weichteilsarkom",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -6247,7 +6106,6 @@
                             {
                                 "key": "urn:dktk:code:146:2",
                                 "name": "Adipoz. Weichteilsarkom - unsicheren Verhaltens",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -6266,7 +6124,6 @@
                             {
                                 "key": "urn:dktk:code:147:2",
                                 "name": "Fibroblastisches Weichteilsarkom",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -6309,7 +6166,6 @@
                             {
                                 "key": "urn:dktk:code:148:2",
                                 "name": "Fibrobl. Weichteilsarkom - unsicheren Verhaltens",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -6360,7 +6216,6 @@
                             {
                                 "key": "urn:dktk:code:149:2",
                                 "name": "Fibrohistiozytäres Weichteilsarkom",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -6379,7 +6234,6 @@
                             {
                                 "key": "urn:dktk:code:150:2",
                                 "name": "Fibrohistioz. Weichteilsarkom - unsicheren Verhaltens",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -6406,7 +6260,6 @@
                             {
                                 "key": "urn:dktk:code:153:2",
                                 "name": "Glattmuskuläres Weichteilsarkom/Leiomyosarkom",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -6425,7 +6278,6 @@
                             {
                                 "key": "urn:dktk:code:154:2",
                                 "name": "Pericytic soft tissue sarcoma",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -6444,7 +6296,6 @@
                             {
                                 "key": "urn:dktk:code:155:2",
                                 "name": "pericyte. Soft tissue sarcoma - unsafe behavior",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -6467,7 +6318,6 @@
                             {
                                 "key": "urn:dktk:code:156:2",
                                 "name": "Musculoskeletal soft tissue sarcoma/rhabdomyosarcoma",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -6506,7 +6356,6 @@
                             {
                                 "key": "urn:dktk:code:157:2",
                                 "name": "Synovialsarkoma",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -6533,7 +6382,6 @@
                             {
                                 "key": "urn:dktk:code:158:2",
                                 "name": "Vascular soft tissue sarcoma",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -6556,7 +6404,6 @@
                             {
                                 "key": "urn:dktk:code:160:2",
                                 "name": "Soft tissue sarcoma of the nerve sheaths",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -6599,7 +6446,6 @@
                             {
                                 "key": "urn:dktk:code:159:2",
                                 "name": "Vask. Soft tissue sarcoma - unsafe behavior",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -6626,7 +6472,6 @@
                             {
                                 "key": "urn:dktk:code:161:2",
                                 "name": "Soft tissue sark. d. Nerve sheaths - unsafe behavior",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -6645,7 +6490,6 @@
                             {
                                 "key": "urn:dktk:code:163:2",
                                 "name": "Other soft tissue sarcoma (unclear differentiation)",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -6712,7 +6556,6 @@
                             {
                                 "key": "urn:dktk:code:165:2",
                                 "name": "Other soft tissue sark. (unclear diff.) - unsafe behavior",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -6752,7 +6595,6 @@
                             {
                                 "key": "urn:dktk:code:162:2",
                                 "name": "Undifferentiated/unclassified tumor",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -6796,7 +6638,6 @@
                             {
                                 "key": "urn:dktk:code:151:2",
                                 "name": "Gastrointestinal stromal sarcoma",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -6847,7 +6688,6 @@
                             {
                                 "key": "urn:dktk:code:152:2",
                                 "name": "Gastrointest. Stromal tumor - unsafe behavior",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -6883,7 +6723,6 @@
                             {
                                 "key": "urn:dktk:code:164:2",
                                 "name": "Gliosarkoma",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -6922,7 +6761,8 @@
             {
                 "key": "urn:dktk:code:166:2",
                 "name": "Blastomas",
-                "fieldType": "group", "childCategories": [
+                "fieldType": "group",
+                "childCategories": [
                     {
                         "key": "blastome_alle_gruppen",
                         "name": "Blastome, alle Gruppen",
@@ -6933,7 +6773,6 @@
                             {
                                 "key": "urn:dktk:code:167:2",
                                 "name": "Hepatoblastoma",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -6952,7 +6791,6 @@
                             {
                                 "key": "urn:dktk:code:168:2",
                                 "name": "Pankreatoblastoma",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -6971,7 +6809,6 @@
                             {
                                 "key": "urn:dktk:code:169:2",
                                 "name": "Pleuropulmonary blastoma",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -6994,7 +6831,6 @@
                             {
                                 "key": "urn:dktk:code:170:2",
                                 "name": "Chondroblastoma",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -7017,7 +6853,6 @@
                             {
                                 "key": "urn:dktk:code:171:2",
                                 "name": "Nephroblastoma",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -7036,7 +6871,6 @@
                             {
                                 "key": "urn:dktk:code:172:2",
                                 "name": "Retinoblastoma",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -7067,7 +6901,6 @@
                             {
                                 "key": "urn:dktk:code:173:2",
                                 "name": "Neuroblastoma",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -7090,7 +6923,6 @@
                             {
                                 "key": "urn:dktk:code:174:2",
                                 "name": "Medulloblastoma",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -7109,7 +6941,6 @@
                             {
                                 "key": "urn:dktk:code:175:2",
                                 "name": "Pineoblastoma",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -7132,7 +6963,8 @@
             {
                 "key": "urn:dktk:code:176:2",
                 "name": "Germ cell tumors",
-                "fieldType": "group", "childCategories": [
+                "fieldType": "group",
+                "childCategories": [
                     {
                         "key": "keimzellentumore_alle_gruppen",
                         "name": "Germ Cell Tumors, all groups",
@@ -7143,7 +6975,6 @@
                             {
                                 "key": "urn:dktk:code:177:2",
                                 "name": "Chorion-Ca",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -7162,7 +6993,6 @@
                             {
                                 "key": "urn:dktk:code:180:2",
                                 "name": "Germinoma",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -7201,7 +7031,6 @@
                             {
                                 "key": "urn:dktk:code:179:2",
                                 "name": "Embryonal-Ca",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -7224,7 +7053,6 @@
                             {
                                 "key": "urn:dktk:code:178:2",
                                 "name": "Yolk sac carcinoma",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -7243,7 +7071,6 @@
                             {
                                 "key": "urn:dktk:code:181:2",
                                 "name": "Teratoma",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -7282,7 +7109,6 @@
                             {
                                 "key": "urn:dktk:code:182:2",
                                 "name": "Germ Cell Tumor other",
-                                "description": "",
                                 "aggregatedValue": [
                                     [
                                         {
@@ -7319,7 +7145,8 @@
     {
         "key": "tumor_classification",
         "name": "Tumor classification",
-        "fieldType": "group", "childCategories": [
+        "fieldType": "group",
+        "childCategories": [
             {
                 "key": "year_of_diagnosis",
                 "name": "Year of Diagnosis",
@@ -17925,33 +17752,27 @@
                 "criteria": [
                     {
                         "key": "L",
-                        "name": "L",
-                        "description": "Left"
+                        "name": "Left"
                     },
                     {
                         "key": "R",
-                        "name": "R",
-                        "description": "Right"
+                        "name": "Right"
                     },
                     {
                         "key": "B",
-                        "name": "B",
-                        "description": "Bilateral"
+                        "name": "Bilateral"
                     },
                     {
                         "key": "M",
-                        "name": "M",
-                        "description": "Centered"
+                        "name": "Centered"
                     },
                     {
                         "key": "U",
-                        "name": "U",
-                        "description": "Unknown"
+                        "name": "Unknown"
                     },
                     {
                         "key": "T",
-                        "name": "T",
-                        "description": "Not applicable"
+                        "name": "Not applicable"
                     }
                 ]
             },
@@ -17964,140 +17785,115 @@
                 "criteria": [
                     {
                         "key": "0is",
-                        "name": "0is",
-                        "description": "0is"
+                        "name": "0is"
                     },
                     {
                         "key": "0a",
-                        "name": "0a",
-                        "description": "0a"
+                        "name": "0a"
                     },
                     {
                         "key": "0",
-                        "name": "0",
-                        "description": "0"
+                        "name": "0"
                     },
                     {
                         "key": "IA2",
-                        "name": "IA2",
-                        "description": "IA2"
+                        "name": "IA2"
                     },
                     {
                         "key": "IA1",
-                        "name": "IA1",
-                        "description": "IA1"
+                        "name": "IA1"
                     },
                     {
                         "key": "IA",
-                        "name": "IA",
-                        "description": "IA"
+                        "name": "IA"
                     },
                     {
                         "key": "IB2",
-                        "name": "IB2",
-                        "description": "IB2"
+                        "name": "IB2"
                     },
                     {
                         "key": "IB1",
-                        "name": "IB1",
-                        "description": "IB1"
+                        "name": "IB1"
                     },
                     {
                         "key": "IB",
-                        "name": "IB",
-                        "description": "IB"
+                        "name": "IB"
                     },
                     {
                         "key": "IIC",
-                        "name": "IIC",
-                        "description": "IIC"
+                        "name": "IIC"
                     },
                     {
                         "key": "IIB",
-                        "name": "IIB",
-                        "description": "IIB"
+                        "name": "IIB"
                     },
                     {
                         "key": "IIA2",
-                        "name": "IIA2",
-                        "description": "IIA2"
+                        "name": "IIA2"
                     },
                     {
                         "key": "IIA1",
-                        "name": "IIA1",
-                        "description": "IIA1"
+                        "name": "IIA1"
                     },
                     {
                         "key": "IIA",
-                        "name": "IIA",
-                        "description": "IIA"
+                        "name": "IIA"
                     },
                     {
                         "key": "II",
-                        "name": "II",
-                        "description": "II"
+                        "name": "II"
                     },
                     {
                         "key": "IIIC2",
-                        "name": "IIIC2",
-                        "description": "IIIC2"
+                        "name": "IIIC2"
                     },
                     {
                         "key": "IIIC1",
-                        "name": "IIIC1",
-                        "description": "IIIC1"
+                        "name": "IIIC1"
                     },
                     {
                         "key": "IIIC",
-                        "name": "IIIC",
-                        "description": "IIIC"
+                        "name": "IIIC"
                     },
                     {
                         "key": "IIIB",
-                        "name": "IIIB",
-                        "description": "IIIB"
+                        "name": "IIIB"
                     },
                     {
                         "key": "IIIA",
-                        "name": "IIIA",
-                        "description": "IIIA"
+                        "name": "IIIA"
                     },
                     {
                         "key": "III",
-                        "name": "III",
-                        "description": "III"
+                        "name": "III"
                     },
                     {
                         "key": "IVC",
-                        "name": "IVC",
-                        "description": "IVC"
+                        "name": "IVC"
                     },
                     {
                         "key": "IVB",
-                        "name": "IVB",
-                        "description": "IVB"
+                        "name": "IVB"
                     },
                     {
                         "key": "IVA",
-                        "name": "IVA",
-                        "description": "IVA"
+                        "name": "IVA"
                     },
                     {
                         "key": "IV",
-                        "name": "IV",
-                        "description": "IV"
+                        "name": "IV"
                     },
                     {
                         "key": "IS",
-                        "name": "IS",
-                        "description": "IS"
+                        "name": "IS"
                     }
                 ]
             },
             {
                 "key": "tnm",
                 "name": "TNM(c)",
-                "fieldType": "group", "childCategories": [
+                "fieldType": "group",
+                "childCategories": [
                     {
                         "key": "21905-5",
                         "name": "TNM-T",
@@ -18107,203 +17903,163 @@
                         "criteria": [
                             {
                                 "key": "0",
-                                "name": "0",
-                                "description": "0"
+                                "name": "0"
                             },
                             {
                                 "key": "1",
-                                "name": "1",
-                                "description": "1"
+                                "name": "1"
                             },
                             {
                                 "key": "1a",
-                                "name": "1a",
-                                "description": "1a"
+                                "name": "1a"
                             },
                             {
                                 "key": "1a1",
-                                "name": "1a1",
-                                "description": "1a1"
+                                "name": "1a1"
                             },
                             {
                                 "key": "1a2",
-                                "name": "1a2",
-                                "description": "1a2"
+                                "name": "1a2"
                             },
                             {
                                 "key": "1b",
-                                "name": "1b",
-                                "description": "1b"
+                                "name": "1b"
                             },
                             {
                                 "key": "1b1",
-                                "name": "1b1",
-                                "description": "1b1"
+                                "name": "1b1"
                             },
                             {
                                 "key": "1b2",
-                                "name": "1b2",
-                                "description": "1b2"
+                                "name": "1b2"
                             },
                             {
                                 "key": "1c",
-                                "name": "1c",
-                                "description": "1c"
+                                "name": "1c"
                             },
                             {
                                 "key": "1c1",
-                                "name": "1c1",
-                                "description": "1c1"
+                                "name": "1c1"
                             },
                             {
                                 "key": "1c2",
-                                "name": "1c2",
-                                "description": "1c2"
+                                "name": "1c2"
                             },
                             {
                                 "key": "1c3",
-                                "name": "1c3",
-                                "description": "1c3"
+                                "name": "1c3"
                             },
                             {
                                 "key": "1d",
-                                "name": "1d",
-                                "description": "1d"
+                                "name": "1d"
                             },
                             {
                                 "key": "1mi",
-                                "name": "1mi",
-                                "description": "1mi"
+                                "name": "1mi"
                             },
                             {
                                 "key": "2",
-                                "name": "2",
-                                "description": "2"
+                                "name": "2"
                             },
                             {
                                 "key": "2a",
-                                "name": "2a",
-                                "description": "2a"
+                                "name": "2a"
                             },
                             {
                                 "key": "2a1",
-                                "name": "2a1",
-                                "description": "2a1"
+                                "name": "2a1"
                             },
                             {
                                 "key": "2a2",
-                                "name": "2a2",
-                                "description": "2a2"
+                                "name": "2a2"
                             },
                             {
                                 "key": "2b",
-                                "name": "2b",
-                                "description": "2b"
+                                "name": "2b"
                             },
                             {
                                 "key": "2c",
-                                "name": "2c",
-                                "description": "2c"
+                                "name": "2c"
                             },
                             {
                                 "key": "2d",
-                                "name": "2d",
-                                "description": "2d"
+                                "name": "2d"
                             },
                             {
                                 "key": "3",
-                                "name": "3",
-                                "description": "3"
+                                "name": "3"
                             },
                             {
                                 "key": "3a",
-                                "name": "3a",
-                                "description": "3a"
+                                "name": "3a"
                             },
                             {
                                 "key": "3b",
-                                "name": "3b",
-                                "description": "3b"
+                                "name": "3b"
                             },
                             {
                                 "key": "3c",
-                                "name": "3c",
-                                "description": "3c"
+                                "name": "3c"
                             },
                             {
                                 "key": "3d",
-                                "name": "3d",
-                                "description": "3d"
+                                "name": "3d"
                             },
                             {
                                 "key": "4",
-                                "name": "4",
-                                "description": "4"
+                                "name": "4"
                             },
                             {
                                 "key": "4a",
-                                "name": "4a",
-                                "description": "4a"
+                                "name": "4a"
                             },
                             {
                                 "key": "4b",
-                                "name": "4b",
-                                "description": "4b"
+                                "name": "4b"
                             },
                             {
                                 "key": "4c",
-                                "name": "4c",
-                                "description": "4c"
+                                "name": "4c"
                             },
                             {
                                 "key": "4d",
-                                "name": "4d",
-                                "description": "4d"
+                                "name": "4d"
                             },
                             {
                                 "key": "4e",
-                                "name": "4e",
-                                "description": "4e"
+                                "name": "4e"
                             },
                             {
                                 "key": "a",
-                                "name": "a",
-                                "description": "a"
+                                "name": "a"
                             },
                             {
                                 "key": "is",
-                                "name": "is",
-                                "description": "is"
+                                "name": "is"
                             },
                             {
                                 "key": "is(DCIS)",
-                                "name": "is(DCIS)",
-                                "description": "is(DCIS)"
+                                "name": "is(DCIS)"
                             },
                             {
                                 "key": "is(LCIS)",
-                                "name": "is(LCIS)",
-                                "description": "is(LCIS)"
+                                "name": "is(LCIS)"
                             },
                             {
                                 "key": "is(Paget)",
-                                "name": "is(Paget)",
-                                "description": "is(Paget)"
+                                "name": "is(Paget)"
                             },
                             {
                                 "key": "is(pd)",
-                                "name": "is(pd)",
-                                "description": "is(pd)"
+                                "name": "is(pd)"
                             },
                             {
                                 "key": "is(pu)",
-                                "name": "is(pu)",
-                                "description": "is(pu)"
+                                "name": "is(pu)"
                             },
                             {
                                 "key": "X",
-                                "name": "X",
-                                "description": "X"
+                                "name": "X"
                             }
                         ]
                     },
@@ -18316,98 +18072,79 @@
                         "criteria": [
                             {
                                 "key": "0",
-                                "name": "0",
-                                "description": "0"
+                                "name": "0"
                             },
                             {
                                 "key": "0(i+)",
-                                "name": "0(i+)",
-                                "description": "0(i+)"
+                                "name": "0(i+)"
                             },
                             {
                                 "key": "0(i-)",
-                                "name": "0(i-)",
-                                "description": "0(i-)"
+                                "name": "0(i-)"
                             },
                             {
                                 "key": "0(mol+)",
-                                "name": "0(mol+)",
-                                "description": "0(mol+)"
+                                "name": "0(mol+)"
                             },
                             {
                                 "key": "0(mol-)",
-                                "name": "0(mol-)",
-                                "description": "0(mol-)"
+                                "name": "0(mol-)"
                             },
                             {
                                 "key": "1",
-                                "name": "1",
-                                "description": "1"
+                                "name": "1"
                             },
                             {
                                 "key": "1a",
-                                "name": "1a",
-                                "description": "1a"
+                                "name": "1a"
                             },
                             {
                                 "key": "1b",
-                                "name": "1b",
-                                "description": "1b"
+                                "name": "1b"
                             },
                             {
                                 "key": "1c",
-                                "name": "1c",
-                                "description": "1c"
+                                "name": "1c"
                             },
                             {
                                 "key": "1mi",
-                                "name": "1mi",
-                                "description": "1mi"
+                                "name": "1mi"
                             },
                             {
                                 "key": "2",
-                                "name": "2",
-                                "description": "2"
+                                "name": "2"
                             },
                             {
                                 "key": "2a",
-                                "name": "2a",
-                                "description": "2a"
+                                "name": "2a"
                             },
                             {
                                 "key": "2b",
-                                "name": "2b",
-                                "description": "2b"
+                                "name": "2b"
                             },
                             {
                                 "key": "2c",
-                                "name": "2c",
-                                "description": "2c"
+                                "name": "2c"
                             },
                             {
                                 "key": "3",
-                                "name": "3",
-                                "description": "3"
+                                "name": "3"
                             },
                             {
                                 "key": "3a",
-                                "name": "3a",
-                                "description": "3a"
+                                "name": "3a"
                             },
                             {
                                 "key": "3b",
-                                "name": "3b",
-                                "description": "3b"
+                                "name": "3b"
                             },
                             {
                                 "key": "3c",
-                                "name": "3c",
-                                "description": "3c"
+                                "name": "3c"
                             },
                             {
                                 "key": "X",
-                                "name": "X",
-                                "description": "X"
+                                "name": "X"
                             }
                         ]
                     },
@@ -18420,58 +18157,47 @@
                         "criteria": [
                             {
                                 "key": "0",
-                                "name": "0",
-                                "description": "0"
+                                "name": "0"
                             },
                             {
                                 "key": "1",
-                                "name": "1",
-                                "description": "1"
+                                "name": "1"
                             },
                             {
                                 "key": "1a",
-                                "name": "1a",
-                                "description": "1a"
+                                "name": "1a"
                             },
                             {
                                 "key": "1b",
-                                "name": "1b",
-                                "description": "1b"
+                                "name": "1b"
                             },
                             {
                                 "key": "1c",
-                                "name": "1c",
-                                "description": "1c"
+                                "name": "1c"
                             },
                             {
                                 "key": "1d",
-                                "name": "1d",
-                                "description": "1d"
+                                "name": "1d"
                             },
                             {
                                 "key": "1e",
-                                "name": "1e",
-                                "description": "1e"
+                                "name": "1e"
                             },
                             {
                                 "key": "0(i-)",
-                                "name": "0(i-)",
-                                "description": "0(i-)"
+                                "name": "0(i-)"
                             },
                             {
                                 "key": "0(i+)",
-                                "name": "0(i+)",
-                                "description": "0(i+)"
+                                "name": "0(i+)"
                             },
                             {
                                 "key": "0(mol-)",
-                                "name": "0(mol-)",
-                                "description": "0(mol-)"
+                                "name": "0(mol-)"
                             },
                             {
                                 "key": "0(mol+)",
-                                "name": "0(mol+)",
-                                "description": "0(mol+)"
+                                "name": "0(mol+)"
                             }
                         ]
                     },
@@ -18484,48 +18210,39 @@
                         "criteria": [
                             {
                                 "key": "m",
-                                "name": "m",
-                                "description": "Indicates presence of multiple primary tumors in a district"
+                                "name": "Indicates presence of multiple primary tumors in a district"
                             },
                             {
                                 "key": "2",
-                                "name": "2",
-                                "description": "(2) simultaneous tumors"
+                                "name": "(2) simultaneous tumors"
                             },
                             {
                                 "key": "3",
-                                "name": "3",
-                                "description": "(3) simultaneous tumors"
+                                "name": "(3) simultaneous tumors"
                             },
                             {
                                 "key": "4",
-                                "name": "4",
-                                "description": "(4) simultaneous tumors"
+                                "name": "(4) simultaneous tumors"
                             },
                             {
                                 "key": "5",
-                                "name": "5",
-                                "description": "(5) simultaneous tumors"
+                                "name": "(5) simultaneous tumors"
                             },
                             {
                                 "key": "6",
-                                "name": "6",
-                                "description": "(6) simultaneous tumors"
+                                "name": "(6) simultaneous tumors"
                             },
                             {
                                 "key": "7",
-                                "name": "7",
-                                "description": "(7) simultaneous tumors"
+                                "name": "(7) simultaneous tumors"
                             },
                             {
                                 "key": "8",
-                                "name": "8",
-                                "description": "(8) simultaneous tumors"
+                                "name": "(8) simultaneous tumors"
                             },
                             {
                                 "key": "9",
-                                "name": "9",
-                                "description": "(9) simultaneous tumors"
+                                "name": "(9) simultaneous tumors"
                             }
                         ]
                     },
@@ -18538,13 +18255,11 @@
                         "criteria": [
                             {
                                 "key": "y",
-                                "name": "y",
-                                "description": "Classification took place during or after initial multimodal therapy"
+                                "name": "Classification took place during or after initial multimodal therapy"
                             },
                             {
                                 "key": "9",
-                                "name": "9",
-                                "description": "native classification"
+                                "name": "native classification"
                             }
                         ]
                     },
@@ -18557,13 +18272,11 @@
                         "criteria": [
                             {
                                 "key": "r",
-                                "name": "r",
-                                "description": "Classification was carried out to assess recurrence"
+                                "name": "Classification was carried out to assess recurrence"
                             },
                             {
                                 "key": "9",
-                                "name": "9",
-                                "description": "native classification before recurrence occurs"
+                                "name": "native classification before recurrence occurs"
                             }
                         ]
                     }
@@ -18578,33 +18291,27 @@
                 "criteria": [
                     {
                         "key": "R0",
-                        "name": "R0",
-                        "description": "No residual tumor"
+                        "name": "No residual tumor"
                     },
                     {
                         "key": "R1",
-                        "name": "R1",
-                        "description": "Microscopic residual tumor"
+                        "name": "Microscopic residual tumor"
                     },
                     {
                         "key": "R2",
-                        "name": "R2",
-                        "description": "Macroscopic residual tumor"
+                        "name": "Macroscopic residual tumor"
                     },
                     {
                         "key": "R1(is)",
-                        "name": "R1(is)",
-                        "description": "In-Situ-Rest"
+                        "name": "In-Situ-Rest"
                     },
                     {
                         "key": "R1(cy+)",
-                        "name": "R1(cy+)",
-                        "description": "Cytological residue"
+                        "name": "Cytological residue"
                     },
                     {
                         "key": "RX",
-                        "name": "RX",
-                        "description": "Presence of residual tumor cannot be assessed"
+                        "name": "Presence of residual tumor cannot be assessed"
                     }
                 ]
             },
@@ -18617,8 +18324,7 @@
                 "criteria": [
                     {
                         "key": "J",
-                        "name": "J",
-                        "description": "yes"
+                        "name": "yes"
                     }
                 ]
             },
@@ -18631,63 +18337,51 @@
                 "criteria": [
                     {
                         "key": "PUL",
-                        "name": "PUL",
-                        "description": "lung"
+                        "name": "lung"
                     },
                     {
                         "key": "OSS",
-                        "name": "OSS",
-                        "description": "bone"
+                        "name": "bone"
                     },
                     {
                         "key": "HEP",
-                        "name": "HEP",
-                        "description": "liver"
+                        "name": "liver"
                     },
                     {
                         "key": "BRA",
-                        "name": "BRA",
-                        "description": "brain"
+                        "name": "brain"
                     },
                     {
                         "key": "LYM",
-                        "name": "LYM",
-                        "description": "lymph node"
+                        "name": "lymph node"
                     },
                     {
                         "key": "MAR",
-                        "name": "MAR",
-                        "description": "bone marrow"
+                        "name": "bone marrow"
                     },
                     {
                         "key": "PLE",
-                        "name": "PLE",
-                        "description": "pleura"
+                        "name": "pleura"
                     },
                     {
                         "key": "PER",
-                        "name": "PER",
-                        "description": "peritoneum"
+                        "name": "peritoneum"
                     },
                     {
                         "key": "ADR",
-                        "name": "ADR",
-                        "description": "adrenal glands"
+                        "name": "adrenal glands"
                     },
                     {
                         "key": "SKI",
-                        "name": "SKI",
-                        "description": "skin"
+                        "name": "skin"
                     },
                     {
                         "key": "OTH",
-                        "name": "OTH",
-                        "description": "other organs"
+                        "name": "other organs"
                     },
                     {
                         "key": "GEN",
-                        "name": "GEN",
-                        "description": "generalized metastasis"
+                        "name": "generalized metastasis"
                     }
                 ]
             }
@@ -18696,7 +18390,8 @@
     {
         "key": "therapy_of_tumor",
         "name": "Therapy of tumor",
-        "fieldType": "group", "childCategories": [
+        "fieldType": "group",
+        "childCategories": [
             {
                 "key": "therapy-intention-hki",
                 "name": "Intention of Therapy",
@@ -18706,13 +18401,11 @@
                 "criteria": [
                     {
                         "key": "K",
-                        "name": "K",
-                        "description": "curative"
+                        "name": "curative"
                     },
                     {
                         "key": "P",
-                        "name": "P",
-                        "description": "palliative"
+                        "name": "palliative"
                     }
                 ]
             },
@@ -18735,7 +18428,8 @@
             {
                 "key": "therapy_of_tumor",
                 "name": "Systemic therapy",
-                "fieldType": "group", "childCategories": [
+                "fieldType": "group",
+                "childCategories": [
                     {
                         "key": "chemo-hki",
                         "name": "Chemotherapy",
@@ -18745,13 +18439,11 @@
                         "criteria": [
                             {
                                 "key": "1",
-                                "name": "1",
-                                "description": "line of therapy 1"
+                                "name": "line of therapy 1"
                             },
                             {
                                 "key": "2",
-                                "name": "2",
-                                "description": "line of therapy 2"
+                                "name": "line of therapy 2"
                             }
                         ]
                     },
@@ -18764,13 +18456,11 @@
                         "criteria": [
                             {
                                 "key": "1",
-                                "name": "1",
-                                "description": "line of therapy 1"
+                                "name": "line of therapy 1"
                             },
                             {
                                 "key": "2",
-                                "name": "2",
-                                "description": "line of therapy 2"
+                                "name": "line of therapy 2"
                             }
                         ]
                     },
@@ -18783,13 +18473,11 @@
                         "criteria": [
                             {
                                 "key": "1",
-                                "name": "1",
-                                "description": "line of therapy 1"
+                                "name": "line of therapy 1"
                             },
                             {
                                 "key": "2",
-                                "name": "2",
-                                "description": "line of therapy 2"
+                                "name": "line of therapy 2"
                             }
                         ]
                     }
@@ -18800,7 +18488,8 @@
     {
         "key": "biosamples",
         "name": "Biosamples",
-        "fieldType": "group", "childCategories": [
+        "fieldType": "group",
+        "childCategories": [
             {
                 "key": "sample_kind",
                 "name": "Type of Specimen",
@@ -18810,28 +18499,23 @@
                 "criteria": [
                     {
                         "key": "blood",
-                        "name": "blood",
-                        "description": "Blood"
+                        "name": "Blood"
                     },
                     {
                         "key": "DLA (Diagnostic Leukapheresis)",
-                        "name": "DLA (Diagnostic Leukapheresis)",
-                        "description": "DLA"
+                        "name": "DLA"
                     },
                     {
                         "key": "Healthy Tissue",
-                        "name": "Healthy Tissue",
-                        "description": "Healthy Tissue"
+                        "name": "Healthy Tissue"
                     },
                     {
                         "key": "Tumor Tissue",
-                        "name": "Tumor Tissue",
-                        "description": "Tumor Tissue"
+                        "name": "Tumor Tissue"
                     },
                     {
                         "key": "Lymph node",
-                        "name": "Lymph node",
-                        "description": "Lymph node"
+                        "name": "Lymph node"
                     }
                 ]
             }
