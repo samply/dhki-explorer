@@ -5,6 +5,7 @@
     setCatalogue,
     getAst,
     clearSiteResults,
+    resetDiagrams,
     buildLibrary,
     buildMeasure,
     querySpot,
@@ -91,6 +92,7 @@
     );
 
     clearSiteResults();
+    resetDiagrams();
     departments = {};
     const query = btoa(
       JSON.stringify({
