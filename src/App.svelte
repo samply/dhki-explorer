@@ -104,7 +104,7 @@
   <div id="result-summary" class="card">
     <lens-result-summary></lens-result-summary>
   </div>
-  <div id="department-table" class="card">
+  <div class="card">
     <h3>Associated Members</h3>
     <table>
       <thead>
@@ -218,7 +218,7 @@
   #main-grid {
     margin: var(--gap-xs);
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     gap: var(--gap-xs);
 
     #catalogue {
@@ -228,10 +228,6 @@
 
     #result-summary {
       grid-column: 2 / -1;
-    }
-
-    #department-table {
-      grid-column: span 2;
     }
 
     #chart-diagnosis {
