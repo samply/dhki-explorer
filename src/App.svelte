@@ -138,7 +138,7 @@
     <lens-result-summary></lens-result-summary>
   </div>
   <div id="department-table" class="card">
-    <h3>Associated Members</h3>
+    <h4>Associated Members</h4>
     <table>
       <thead>
         <tr>
