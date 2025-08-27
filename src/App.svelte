@@ -32,8 +32,41 @@
   let departments: Record<string, number> = $state({});
 
   function updateDepartments(depts: Record<string, number>) {
-    for (const [key, value] of Object.entries(depts)) {
-      departments[key] = departments[key] ? departments[key] + value : value;
+    const mapping = {
+      "UMM/ Chirurgische Klinik": "Surgery",
+      "UMM/Dermatologie, Venerologie, Allergologie":
+        "Dermatology, Venereology and Allergology",
+      "UMM/ Frauenklinik": "Gynecology & Obstetrics",
+      "UMM/ Klinik fÃ¼r Urologie": "Urology",
+      "UMM/ Klinik fÃ¼r Strahlentherapie und Radioonkologie":
+        "Radiotherapy and radiooncology",
+      "UMM/ 2. Medizinische Klinik/Gastroenterologie":
+        "II. Department of Medicine",
+      "UMM/ 3. Medizinische Klinik/ TTZ":
+        "III. Department of Medicine / TTZ / Personalized Medical Oncology",
+      "UMM/ Radiologie und Nuklearmedizin": "Radiology and nuclear medicine",
+      // "???": "Transfusion Medicine and Immunology",
+      "UMM/ Klinik für Urologie": "Urology",
+      // manually set in ETL Prozess for onkostar datasets
+      "HKI - Personalisierte Onkologie":
+        "Translational Clinical Trial Unit at DKFZ Hector CI",
+      // right now not associated with hector
+      // "UMM/ Augenklinik": "Augenklinik",
+      // "UMM/ Hals-Nasen-Ohren-Klinik": "Ear, nose and throat department",
+      // "UMM/ Neurochirurgische Klinik": "Neurosurgery",
+      // "UMM/Neurologie": "Neurology",
+      // "UMM/ OrthopÃ¤disch-Unfallchirurgisches Zentrum (OUZ)": "Orthopaedic Surgery",
+      // "UMM/PÃ¤diatrie": "Pediatrics",
+      // "UMM/Zentrale InterdisziplinÃ¤re Endoskopie": "Zentrale Interdisziplinäre Endoskopie",
+      // "Externer Melder": "Externer Melder",
+    };
+
+    for (const [key, mappedKey] of Object.entries(mapping)) {
+      if (depts[key]) {
+        departments[mappedKey] = departments[mappedKey]
+          ? departments[mappedKey] + depts[key]
+          : depts[key];
+      }
     }
   }
 
@@ -104,7 +137,7 @@
   <div id="result-summary" class="card">
     <lens-result-summary></lens-result-summary>
   </div>
-  <div class="card">
+  <div id="department-table" class="card">
     <h3>Associated Members</h3>
     <table>
       <thead>
@@ -114,7 +147,7 @@
         </tr>
       </thead>
       <tbody>
-        {#each Object.entries(departments) as [dept, count] (dept)}
+        {#each Object.entries(departments).sort((a, b) => b[1] - a[1]) as [dept, count] (dept)}
           <tr>
             <td>{dept}</td>
             <td>{count}</td>
@@ -228,6 +261,19 @@
 
     #result-summary {
       grid-column: 2 / -1;
+    }
+
+    #department-table {
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        td, th {
+          text-align: left;
+          padding: var(--gap-xs);
+          border-top: 1px solid var(--lightest-gray);
+          border-bottom: 1px solid var(--lightest-gray);
+        }
+      }
     }
 
     #chart-diagnosis {
