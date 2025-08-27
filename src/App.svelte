@@ -19,7 +19,6 @@
   import { measures } from "./lib/measures";
   import { translateAstToCql } from "$lib/ast-to-cql-translator";
   import { env } from "$env/dynamic/public";
-  import { SvelteMap } from "svelte/reactivity";
 
   onMount(() => {
     let opt: LensOptions = options;
@@ -74,24 +73,6 @@
       }
     });
   });
-
-  const genderHeaders: Map<string, string> = new SvelteMap<string, string>()
-    .set("male", "männlich")
-    .set("female", "weiblich")
-    .set("other", "divers")
-    .set("unknown", "unbekannt");
-
-  const barChartBackgroundColors: string[] = ["#4dc9f6", "#3da4c7"];
-
-  const vitalStateHeaders: Map<string, string> = new SvelteMap<string, string>()
-    .set("lebend", "alive")
-    .set("verstorben", "deceased")
-    .set("unbekannt", "unknown");
-
-  const therapyHeaders: Map<string, string> = new SvelteMap<
-    string,
-    string
-  >().set("medicationStatements", "Sys. T");
 </script>
 
 <!-- <lens-search-button></lens-search-button>
@@ -161,7 +142,6 @@
           filterRegex="^[CD].*"
           xAxisTitle="Anzahl der Diagnosen"
           yAxisTitle="ICD-10-Codes"
-          backgroundColor={barChartBackgroundColors}
         ></lens-chart>
       </div>
       <div class="chart-wrapper">
@@ -170,7 +150,6 @@
           catalogueGroupCode="gender"
           chartType="pie"
           displayLegends={true}
-          headers={genderHeaders}
         ></lens-chart>
       </div>
       <div class="chart-wrapper chart-age-distribution">
@@ -182,7 +161,6 @@
           filterRegex="^(([0-9]?[0-9]$)|(1[0-2]0))"
           xAxisTitle="Alter"
           yAxisTitle="Anzahl der Primärdiagnosen"
-          backgroundColor={barChartBackgroundColors}
         ></lens-chart>
       </div>
       <div class="chart-wrapper">
@@ -191,7 +169,6 @@
           catalogueGroupCode="75186-7"
           chartType="pie"
           displayLegends={true}
-          headers={vitalStateHeaders}
         ></lens-chart>
       </div>
       <div class="chart-wrapper">
@@ -199,10 +176,8 @@
           title="Therapieart"
           catalogueGroupCode="therapy_of_tumor"
           chartType="bar"
-          headers={therapyHeaders}
           xAxisTitle="Art der Therapie"
           yAxisTitle="Anzahl der Therapieeinträge"
-          backgroundColor={barChartBackgroundColors}
         ></lens-chart>
       </div>
       <div class="chart-wrapper">
@@ -213,7 +188,6 @@
           xAxisTitle="Probentypen"
           yAxisTitle="Probenanzahl"
           filterRegex="^(?!(tissue-other|buffy-coat|peripheral-blood-cells|dried-whole-blood|swab|ascites|stool-faeces|saliva|liquid-other|derivative-other))"
-          backgroundColor={barChartBackgroundColors}
         >
         </lens-chart>
       </div>
