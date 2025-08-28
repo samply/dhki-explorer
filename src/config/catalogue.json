@@ -62,12 +62,12 @@
         ]
     },
     {
-        "key": "Organization1",
+        "key": "Organization",
         "name": "Organisation",
         "fieldType": "group",
         "childCategories": [
             {
-                "key": "Organization1",
+                "key": "Organization",
                 "name": "Associated Members",
                 "system": "",
                 "fieldType": "single-select",
