@@ -87,6 +87,8 @@ export const translateAstToCql = (
     singletons += "\ntrue";
   }
 
+  console.log(singletons);
+
   if (returnOnlySingeltons) {
     return singletons;
   }
@@ -298,7 +300,12 @@ const getSingleton = (criterion: AstBottomLayerValue): string => {
         case "observationMolecularMarkerDNAchange":
         case "observationMolecularMarkerSeqRefNCBI":
         case "observationMolecularMarkerEnsemblID":
-        case "department": {
+        case "department":
+        case "chemoHki":
+        case "immunHki":
+        case "targetedTherapyHki":
+        case "therapyIntentionHki":
+        case "consentHki": {
           if (typeof criterion.value === "string") {
             expression += substituteCQLExpression(
               criterion.key,
