@@ -39,7 +39,7 @@ export const translateAstToCql = (
   let singletons: string = "";
   singletons = backendMeasures;
 
-  singletons += resolveOperation(query);
+  singletons += "\n" + resolveOperation(query);
 
   // let retrievalCriteria: string = "if InInitialPopulation then ";
 

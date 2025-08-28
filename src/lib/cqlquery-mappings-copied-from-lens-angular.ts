@@ -1,7 +1,13 @@
 export const alias = new Map<string, string>([
   ["icd10", "http://fhir.de/CodeSystem/bfarm/icd-10-gm"],
   ["loinc", "http://loinc.org"],
+  ["snomed", "http://snomed.info/sct"],
   ["gradingcs", "http://dktk.dkfz.de/fhir/onco/core/CodeSystem/GradingCS"],
+  ["gradingcsnngm", "urn:oid:2.16.840.1.113883.15.16"],
+  ["tnmtnngm", "urn:oid:2.16.840.1.113883.15.16"],
+  ["tnmnnngm", "urn:oid:2.16.840.1.113883.15.16"],
+  ["tnmmnngm", "urn:oid:2.16.840.1.113883.15.16"],
+  ["tnmrynngm", "urn:oid:2.16.840.1.113883.15.16"],
   ["ops", "http://fhir.de/CodeSystem/bfarm/ops"],
   ["morph", "urn:oid:2.16.840.1.113883.6.43.1"],
   ["lokalisation_icd_o_3", "urn:oid:2.16.840.1.113883.6.43.1"],
@@ -9,6 +15,9 @@ export const alias = new Map<string, string>([
     "bodySite",
     "http://dktk.dkfz.de/fhir/onco/core/CodeSystem/SeitenlokalisationCS",
   ],
+  ["bodySiteNNGM", "http://terminology.hl7.org/CodeSystem/icd-o-3"],
+  ["uicc8nNGM", "http://uk-koeln.de/fhir/CodeSystem/nNGM/uiccStagingV8"],
+  ["uicc7nNGM", "http://uk-koeln.de/fhir/CodeSystem/nNGM/uiccStagingV7"],
   [
     "Therapieart",
     "http://dktk.dkfz.de/fhir/onco/core/CodeSystem/SYSTTherapieartCS",
@@ -42,6 +51,15 @@ export const alias = new Map<string, string>([
     "vitalstatuscs",
     "http://dktk.dkfz.de/fhir/onco/core/CodeSystem/VitalstatusCS",
   ],
+  ["vitalstatuscsnngm", "http://uk-koeln.de/fhir/nNGM/Vitalstatus"],
+  [
+    "raucherstatuscsnngm",
+    "http://uk-koeln.de/fhir/StructureDefinition/Observation/nNGM/raucherstatus",
+  ],
+  [
+    "ecogcsnngm",
+    "http://uk-koeln.de/fhir/StructureDefinition/Observation/nNGM/ecog",
+  ],
   ["jnucs", "http://dktk.dkfz.de/fhir/onco/core/CodeSystem/JNUCS"],
   [
     "fmlokalisationcs",
@@ -63,28 +81,13 @@ export const alias = new Map<string, string>([
     "http://dktk.dkfz.de/fhir/onco/core/CodeSystem/TNMmSymbolCS",
   ],
   ["molecularMarker", "http://www.genenames.org"],
-
-  ["BBMRI_icd10", "http://hl7.org/fhir/sid/icd-10"],
-  ["BBMRI_icd10gm", "http://fhir.de/CodeSystem/dimdi/icd-10-gm"],
-  [
-    "BBMRI_SampleMaterialType",
-    "https://fhir.bbmri.de/CodeSystem/SampleMaterialType",
-  ], //specimentype
-  [
-    "BBMRI_StorageTemperature",
-    "https://fhir.bbmri.de/CodeSystem/StorageTemperature",
-  ],
-  [
-    "BBMRI_SmokingStatus",
-    "http://hl7.org/fhir/uv/ips/ValueSet/current-smoking-status-uv-ips",
-  ],
 ]);
 
 export const cqltemplate = new Map<string, string>([
-  ["gender", "Patient.gender = '{{C}}'"],
+  ["gender", "Patient.gender"],
   [
-    "pseudo_projects",
-    "  exists ( Patient.extension E where E.url = 'http://dktk.dkfz.de/fhir/projects/{{C}}')",
+    "samplingDate",
+    "exists from [Specimen] S\nwhere FHIRHelpers.ToDateTime(S.collection.collected) between {{D1}} and {{D2}}",
   ],
   ["conditionValue", "exists [Condition: Code '{{C}}' from {{A1}}]"],
   [
@@ -121,29 +124,10 @@ export const cqltemplate = new Map<string, string>([
     "conditionGreaterThanAge",
     "exists [Condition] C\nwhere AgeInYearsAt(FHIRHelpers.ToDateTime(C.onset)) >= {{D1}}",
   ],
+  //UICC Anfrage auf Erstdiagnose (V7+V8) sowie auf Condition
   [
-    "primaryConditionRangeDate",
-    "year from PrimaryDiagnosis.onset between {{D1}} and {{D2}}",
-  ],
-  [
-    "primaryConditionLowerThanDate",
-    "year from PrimaryDiagnosis.onset <= {{D2}}",
-  ],
-  [
-    "primaryConditionGreaterThanDate",
-    "year from PrimaryDiagnosis.onset >= {{D1}}",
-  ],
-  [
-    "primaryConditionRangeAge",
-    "AgeInYearsAt(FHIRHelpers.ToDateTime(PrimaryDiagnosis.onset)) between {{D1}} and {{D2}}",
-  ],
-  [
-    "primaryConditionLowerThanAge",
-    "AgeInYearsAt(FHIRHelpers.ToDateTime(PrimaryDiagnosis.onset)) <= {{D2}}",
-  ],
-  [
-    "primaryConditionGreaterThanAge",
-    "AgeInYearsAt(FHIRHelpers.ToDateTime(PrimaryDiagnosis.onset)) >= {{D1}}",
+    "conditionUicc",
+    "(exists from [Condition] C\nwhere (C.stage.summary.coding contains Code '{{C}}' from {{A1}})) or (exists from [Condition] C\nwhere (C.stage.summary.coding contains Code '{{C}}' from {{A2}})) or (exists from [Observation: Code '260879005' from {{A3}}] O\nwhere O.value.coding.code contains '{{C}}')",
   ],
   //TODO Revert to first expression if https://github.com/samply/blaze/issues/808 is solved
   // ["observation", "exists from [Observation: Code '{{K}}' from {{A1}}] O\nwhere O.value.coding contains Code '{{C}}' from {{A2}}"],
@@ -166,7 +150,7 @@ export const cqltemplate = new Map<string, string>([
   [
     "observationMolecularMarkerAminoacidchange",
     "exists from [Observation: Code '69548-6' from {{A1}}] O\nwhere O.component.where(code.coding contains Code '{{K}}' from {{A1}}).value = '{{C}}'",
-  ], //TODO @ThomasK replace C with S
+  ],
   [
     "observationMolecularMarkerDNAchange",
     "exists from [Observation: Code '69548-6' from {{A1}}] O\nwhere O.component.where(code.coding contains Code '{{K}}' from {{A1}}).value = '{{C}}'",
@@ -179,6 +163,14 @@ export const cqltemplate = new Map<string, string>([
     "observationMolecularMarkerEnsemblID",
     "exists from [Observation: Code '69548-6' from {{A1}}] O\nwhere O.component.where(code.coding contains Code '{{K}}' from {{A1}}).value = '{{C}}'",
   ],
+  [
+    "observationGradingNNGM",
+    "exists from [Observation: Code '59847-4' from {{A1}}] O\nwhere O.component.where(code.coding contains Code '59542-1' from {{A1}}).value.coding.code = '{{C}}'",
+  ],
+  [
+    "observationTnmNNGM",
+    "exists from [Observation: Code '260879005' from {{A1}}] O\nwhere O.component.where(code.coding contains Code '{{K}}' from {{A1}}).value.coding.code = '{{C}}'",
+  ],
   ["procedure", "exists [Procedure: category in Code '{{K}}' from {{A1}}]"],
   [
     "procedureResidualstatus",
@@ -190,14 +182,9 @@ export const cqltemplate = new Map<string, string>([
   ],
   ["hasSpecimen", "exists [Specimen]"],
   ["specimen", "exists [Specimen: Code '{{C}}' from {{A1}}]"],
-  ["retrieveSpecimenByType", "(S.type.coding.code contains '{{C}}')"],
   [
-    "TNMc",
+    "TNM-x",
     "exists from [Observation: Code '21908-9' from {{A1}}] O\nwhere O.component.where(code.coding contains Code '{{K}}' from {{A1}}).value.coding contains Code '{{C}}' from {{A2}}",
-  ],
-  [
-    "TNMp",
-    "exists from [Observation: Code '21902-2' from {{A1}}] O\nwhere O.component.where(code.coding contains Code '{{K}}' from {{A1}}).value.coding contains Code '{{C}}' from {{A2}}",
   ],
   [
     "Organization",
@@ -207,11 +194,6 @@ export const cqltemplate = new Map<string, string>([
     "department",
     "exists from [Encounter] I\nwhere I.identifier.value = '{{C}}' ",
   ],
-  [
-    "uiccstadium",
-    "(exists ([Observation: Code '21908-9' from loinc] O where O.value.coding.code contains '{{C}}')) or (exists ([Observation: Code '21902-2' from loinc] O where O.value.coding.code contains '{{C}}'))",
-  ],
-  ["histology", "exists from [Observation: Code '59847-4' from loinc] O\n"],
   [
     "chemoHki",
     "exists [MedicationStatement: category in Code 'CH' from {{A1}}] M\nwhere M.extension.where(url='http://hki.de/fhir/StructureDefinition/Therapielinie').value.text = '{{C}}'",
@@ -234,15 +216,37 @@ export const cqltemplate = new Map<string, string>([
 export const criterionMap = new Map<string, { type: string; alias?: string[] }>(
   [
     ["gender", { type: "gender" }],
-    ["pseudo_projects", { type: "pseudo_projects" }],
-    ["histology", { type: "histology", alias: ["loinc"] }],
+    ["samplingDate", { type: "samplingDate" }],
     ["diagnosis", { type: "conditionValue", alias: ["icd10"] }],
+    [
+      "nngmDiagnosis",
+      { type: "conditionValue", alias: ["lokalisation_icd_o_3"] },
+    ],
+    ["uicc", { type: "conditionUicc", alias: ["uicc8", "uicc7", "snomed"] }],
     ["bodySite", { type: "conditionBodySite", alias: ["bodySite"] }],
+    ["bodySiteNNGM", { type: "conditionBodySite", alias: ["bodySiteNNGM"] }],
     [
       "urn:oid:2.16.840.1.113883.6.43.1",
       { type: "conditionLocalization", alias: ["lokalisation_icd_o_3"] },
     ],
     ["59542-1", { type: "observation", alias: ["loinc", "gradingcs"] }], //grading
+    [
+      "59542-1-nNGM",
+      { type: "observationGradingNNGM", alias: ["loinc", "gradingcsnngm"] },
+    ], //grading
+    ["78873005", { type: "observationTnmNNGM", alias: ["snomed", "tnmtnngm"] }], //tnmt
+    [
+      "277206009",
+      { type: "observationTnmNNGM", alias: ["snomed", "tnmnnngm"] },
+    ], //tnmn
+    [
+      "277208005",
+      { type: "observationTnmNNGM", alias: ["snomed", "tnmmnngm"] },
+    ], //tnmm
+    [
+      "399566009",
+      { type: "observationTnmNNGM", alias: ["snomed", "tnmrynngm"] },
+    ], //tnmm
     [
       "metastases_present",
       { type: "observationMetastasis", alias: ["loinc", "jnucs"] },
@@ -262,25 +266,16 @@ export const criterionMap = new Map<string, { type: string; alias?: string[] }>(
     ["KM", { type: "medicationStatement", alias: ["Therapieart"] }], //Knochenmarktransplantation
     ["59847-4", { type: "observation", alias: ["loinc", "morph"] }], //Morphologie
     ["year_of_diagnosis", { type: "conditionRangeDate" }],
-    ["year_of_primary_diagnosis", { type: "primaryConditionRangeDate" }],
     ["sample_kind", { type: "specimen", alias: ["specimentype"] }],
     ["pat_with_samples", { type: "hasSpecimen" }],
     ["age_at_diagnosis", { type: "conditionRangeAge" }],
-    ["age_at_primary_diagnosis", { type: "primaryConditionRangeAge" }],
-    ["21908-9", { type: "uiccstadium", alias: ["loinc", "uiccstadiumcs"] }],
-    ["21905-5", { type: "TNMc", alias: ["loinc", "TNMTCS"] }], //tnm component
-    ["21906-3", { type: "TNMc", alias: ["loinc", "TNMNCS"] }], //tnm component
-    ["21907-1", { type: "TNMc", alias: ["loinc", "TNMMCS"] }], //tnm component
-    ["42030-7", { type: "TNMc", alias: ["loinc", "TNMmSymbolCS"] }], //tnm component
-    ["59479-6", { type: "TNMc", alias: ["loinc", "TNMySymbolCS"] }], //tnm component
-    ["21983-2", { type: "TNMc", alias: ["loinc", "TNMrSymbolCS"] }], //tnm component
-    ["21899-0", { type: "TNMp", alias: ["loinc", "TNMTCS"] }], //tnm component
-    ["21900-6", { type: "TNMp", alias: ["loinc", "TNMNCS"] }], //tnm component
-    ["21901-4", { type: "TNMp", alias: ["loinc", "TNMMCS"] }], //tnm component
-    ["42030-7", { type: "TNMp", alias: ["loinc", "TNMmSymbolCS"] }], //tnm component
-    ["59479-6", { type: "TNMp", alias: ["loinc", "TNMySymbolCS"] }], //tnm component
-    ["21983-2", { type: "TNMp", alias: ["loinc", "TNMrSymbolCS"] }], //tnm component
-
+    ["21908-9", { type: "observation", alias: ["loinc", "uiccstadiumcs"] }], //uicc
+    ["21905-5", { type: "TNM-x", alias: ["loinc", "TNMTCS"] }], //tnm component
+    ["21906-3", { type: "TNM-x", alias: ["loinc", "TNMNCS"] }], //tnm component
+    ["21907-1", { type: "TNM-x", alias: ["loinc", "TNMMCS"] }], //tnm component
+    ["42030-7", { type: "TNM-x", alias: ["loinc", "TNMmSymbolCS"] }], //tnm component
+    ["59479-6", { type: "TNM-x", alias: ["loinc", "TNMySymbolCS"] }], //tnm component
+    ["21983-2", { type: "TNM-x", alias: ["loinc", "TNMrSymbolCS"] }], //tnm component
     ["Organization", { type: "Organization" }], //organization
     [
       "48018-6",
@@ -291,10 +286,7 @@ export const criterionMap = new Map<string, { type: string; alias?: string[] }>(
     ], //molecular marker name
     [
       "48005-3",
-      {
-        type: "observationMolecularMarkerAminoacidchange",
-        alias: ["loinc"],
-      },
+      { type: "observationMolecularMarkerAminoacidchange", alias: ["loinc"] },
     ], //molecular marker
     [
       "81290-9",
@@ -325,10 +317,7 @@ export const criterionMap = new Map<string, { type: string; alias?: string[] }>(
     ], //GesamtbeurteilungTumorstatus
     [
       "LA4583-6",
-      {
-        type: "observation",
-        alias: ["loinc", "verlauflokalertumorstatuscs"],
-      },
+      { type: "observation", alias: ["loinc", "verlauflokalertumorstatuscs"] },
     ], //LokalerTumorstatus
     [
       "LA4370-8",
@@ -347,6 +336,9 @@ export const criterionMap = new Map<string, { type: string; alias?: string[] }>(
     ["75186-7", { type: "observation", alias: ["loinc", "vitalstatuscs"] }], //Vitalstatus
     //["Organization", {type: "Organization"}],
     ["Organization", { type: "department" }],
+    ["67162-8", { type: "observation", alias: ["loinc", "vitalstatuscsnngm"] }], //Vitalstatus
+    ["72166-2", { type: "observation", alias: ["loinc", "raucherstatuscs"] }], //Raucherstatus
+    ["89247-1", { type: "observation", alias: ["loinc", "ecogcs"] }], //ecog
     ["chemo-hki", { type: "chemoHki", alias: ["Therapieart"] }], // search therapies with specific therapyline
     ["immun-hki", { type: "immunHki", alias: ["Therapieart"] }],
     [
