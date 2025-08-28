@@ -10,6 +10,7 @@
     buildMeasure,
     querySpot,
     setSiteResult,
+    getQueryStore,
     type SpotResult,
     type LensOptions,
     type Catalogue,
@@ -30,6 +31,7 @@
     setCatalogue(catalogue as Catalogue);
   });
 
+  let consentSpecificChartsVisible = $state(false);
   let departments: Record<string, number> = $state({});
 
   function updateDepartments(depts: Record<string, number>) {
@@ -71,6 +73,14 @@
     }
   }
 
+  function updateChartVisibility() {
+    const query = getQueryStore();
+    // Only one search bar
+    const bar = query[0];
+
+    consentSpecificChartsVisible = bar.some(item => item.key === "consent-hki");
+  }
+
   let abortController = new AbortController();
   window.addEventListener("lens-search-triggered", () => {
     console.log("AST:", JSON.stringify(getAst()));
@@ -93,6 +103,7 @@
 
     clearSiteResults();
     resetDiagrams();
+    updateChartVisibility();
     departments = {};
     const query = btoa(
       JSON.stringify({
@@ -197,6 +208,40 @@
       yAxisTitle="Therapies"
     ></lens-chart>
   </div>
+
+  {#if consentSpecificChartsVisible}
+  <div class="card">
+    <lens-chart
+      title="Medications"
+      dataKey="AppliedMedications"
+      chartType="bar"
+      backgroundColor={["#4dc9f6", "#3da4c7"]}
+      xAxisTitle="Medication"
+      yAxisTitle="Therapies"
+    ></lens-chart>
+  </div>
+  <div class="card">
+    <lens-chart
+      title="Specimen"
+      dataKey="sample_kind"
+      chartType="bar"
+      backgroundColor={["#4dc9f6", "#3da4c7"]}
+      xAxisTitle="Specimen Type"
+      yAxisTitle="Specimen"
+    ></lens-chart>
+  </div>
+  <div class="card">
+    <lens-chart
+      title="Specimen Subtypes"
+      dataKey="sample_subtype"
+      chartType="bar"
+      backgroundColor={["#4dc9f6", "#3da4c7"]}
+      xAxisTitle="Specimen Subtype"
+      yAxisTitle="Specimen"
+    ></lens-chart>
+  </div>
+  {/if}
+
   <div id="chart-diagnosis" class="card">
     <lens-chart
       title="Diagnosis"
@@ -258,7 +303,7 @@
 
     #catalogue {
       grid-column: 1 / 2;
-      grid-row: 1 / 5;
+      grid-row: 1 / 6;
     }
 
     #result-summary {
@@ -269,7 +314,8 @@
       table {
         width: 100%;
         border-collapse: collapse;
-        td, th {
+        td,
+        th {
           text-align: left;
           padding: var(--gap-xs);
           border-top: 1px solid var(--lightest-gray);
