@@ -119,117 +119,117 @@ const isQueryEmpty = (query: AstTopLayer): boolean => {
   return query.children.every(isQueryEmptyRec);
 };
 
-const processAdditionalCriterion = (query: AstElement): string => {
-  let additionalCriteria = "";
+// const processAdditionalCriterion = (query: AstElement): string => {
+//   let additionalCriteria = "";
 
-  if ("operand" in query) {
-    const top: AstTopLayer = query;
-    top.children.forEach(function (child) {
-      additionalCriteria += processAdditionalCriterion(child);
-    });
-  } else {
-    const buttom: AstBottomLayerValue = query;
-    additionalCriteria += getRetrievalCriterion(buttom);
-  }
-  return additionalCriteria;
-};
+//   if ("operand" in query) {
+//     const top: AstTopLayer = query;
+//     top.children.forEach(function (child) {
+//       additionalCriteria += processAdditionalCriterion(child);
+//     });
+//   } else {
+//     const buttom: AstBottomLayerValue = query;
+//     additionalCriteria += getRetrievalCriterion(buttom);
+//   }
+//   return additionalCriteria;
+// };
 
-const getRetrievalCriterion = (criterion: AstBottomLayerValue): string => {
-  let expression: string = "";
-  let myCQL: string = "";
-  const myCriterion = criterionMap.get(criterion.key);
-  if (myCriterion) {
-    switch (myCriterion.type) {
-      case "specimen": {
-        expression += "(";
-        myCQL += cqltemplate.get("retrieveSpecimenByType");
-        if (typeof criterion.value === "string") {
-          expression +=
-            substituteCQLExpression(
-              criterion.key,
-              myCriterion.alias,
-              myCQL,
-              criterion.value as string,
-            ) + ") or\n";
-        }
-        if (Array.isArray(criterion.value)) {
-          const values: string[] = [];
-          criterion.value.forEach((element) => {
-            values.push(element);
-          });
+// const getRetrievalCriterion = (criterion: AstBottomLayerValue): string => {
+//   let expression: string = "";
+//   let myCQL: string = "";
+//   const myCriterion = criterionMap.get(criterion.key);
+//   if (myCriterion) {
+//     switch (myCriterion.type) {
+//       case "specimen": {
+//         expression += "(";
+//         myCQL += cqltemplate.get("retrieveSpecimenByType");
+//         if (typeof criterion.value === "string") {
+//           expression +=
+//             substituteCQLExpression(
+//               criterion.key,
+//               myCriterion.alias,
+//               myCQL,
+//               criterion.value as string,
+//             ) + ") or\n";
+//         }
+//         if (Array.isArray(criterion.value)) {
+//           const values: string[] = [];
+//           criterion.value.forEach((element) => {
+//             values.push(element);
+//           });
 
-          if (criterion.value.includes("blood-plasma")) {
-            values.push(
-              "plasma-edta",
-              "plasma-citrat",
-              "plasma-heparin",
-              "plasma-cell-free",
-              "plasma-other",
-              "plasma",
-            );
-          }
-          if (criterion.value.includes("blood-serum")) {
-            values.push("serum");
-          }
-          if (criterion.value.includes("tumor-tissue-ffpe")) {
-            values.push(
-              "tissue-ffpe",
-              "tumor-tissue-ffpe",
-              "normal-tissue-ffpe",
-              "other-tissue-ffpe",
-              "tissue-formalin",
-            );
-          }
-          if (criterion.value.includes("tissue-frozen")) {
-            values.push(
-              "tumor-tissue-frozen",
-              "tissue-frozen",
-              "normal-tissue-frozen",
-              "other-tissue-frozen",
-            );
-          }
-          if (criterion.value.includes("dna")) {
-            values.push("cf-dna", "g-dna");
-          }
-          if (criterion.value.includes("tissue-other")) {
-            values.push("tissue-paxgene-or-else", "tissue");
-          }
-          if (criterion.value.includes("derivative-other")) {
-            values.push("derivative");
-          }
-          if (criterion.value.includes("liquid-other")) {
-            values.push("liquid");
-          }
+//           if (criterion.value.includes("blood-plasma")) {
+//             values.push(
+//               "plasma-edta",
+//               "plasma-citrat",
+//               "plasma-heparin",
+//               "plasma-cell-free",
+//               "plasma-other",
+//               "plasma",
+//             );
+//           }
+//           if (criterion.value.includes("blood-serum")) {
+//             values.push("serum");
+//           }
+//           if (criterion.value.includes("tumor-tissue-ffpe")) {
+//             values.push(
+//               "tissue-ffpe",
+//               "tumor-tissue-ffpe",
+//               "normal-tissue-ffpe",
+//               "other-tissue-ffpe",
+//               "tissue-formalin",
+//             );
+//           }
+//           if (criterion.value.includes("tissue-frozen")) {
+//             values.push(
+//               "tumor-tissue-frozen",
+//               "tissue-frozen",
+//               "normal-tissue-frozen",
+//               "other-tissue-frozen",
+//             );
+//           }
+//           if (criterion.value.includes("dna")) {
+//             values.push("cf-dna", "g-dna");
+//           }
+//           if (criterion.value.includes("tissue-other")) {
+//             values.push("tissue-paxgene-or-else", "tissue");
+//           }
+//           if (criterion.value.includes("derivative-other")) {
+//             values.push("derivative");
+//           }
+//           if (criterion.value.includes("liquid-other")) {
+//             values.push("liquid");
+//           }
 
-          if (values.length === 1) {
-            expression +=
-              substituteCQLExpression(
-                criterion.key,
-                myCriterion.alias,
-                myCQL,
-                values[0],
-              ) + ") and\n";
-          } else {
-            values.forEach((value: string) => {
-              expression +=
-                "(" +
-                substituteCQLExpression(
-                  criterion.key,
-                  myCriterion.alias,
-                  myCQL,
-                  value,
-                ) +
-                ") or\n";
-            });
-            expression = expression.slice(0, -4) + ") or\n";
-          }
-        }
-        break;
-      }
-    }
-  }
-  return expression;
-};
+//           if (values.length === 1) {
+//             expression +=
+//               substituteCQLExpression(
+//                 criterion.key,
+//                 myCriterion.alias,
+//                 myCQL,
+//                 values[0],
+//               ) + ") and\n";
+//           } else {
+//             values.forEach((value: string) => {
+//               expression +=
+//                 "(" +
+//                 substituteCQLExpression(
+//                   criterion.key,
+//                   myCriterion.alias,
+//                   myCQL,
+//                   value,
+//                 ) +
+//                 ") or\n";
+//             });
+//             expression = expression.slice(0, -4) + ") or\n";
+//           }
+//         }
+//         break;
+//       }
+//     }
+//   }
+//   return expression;
+// };
 
 const resolveOperation = (operation: AstElement): string => {
   let expression: string = "";
