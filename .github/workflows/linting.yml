@@ -1,12 +1,7 @@
 name: Linting
 on:
-    pull_request:
-        branches:
-            - main
-            - develop
     push:
-        branches:
-            - develop
+    pull_request:
 
 jobs:
     verify-code:
