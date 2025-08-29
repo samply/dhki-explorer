@@ -78,7 +78,9 @@
     // Only one search bar
     const bar = query[0];
 
-    consentSpecificChartsVisible = bar.some(item => item.key === "consent-hki");
+    consentSpecificChartsVisible = bar.some(
+      (item) => item.key === "consent-hki",
+    );
   }
 
   let abortController = new AbortController();
@@ -210,36 +212,36 @@
   </div>
 
   {#if consentSpecificChartsVisible}
-  <div class="card">
-    <lens-chart
-      title="Medications"
-      dataKey="AppliedMedications"
-      chartType="bar"
-      backgroundColor={["#4dc9f6", "#3da4c7"]}
-      xAxisTitle="Medication"
-      yAxisTitle="Therapies"
-    ></lens-chart>
-  </div>
-  <div class="card">
-    <lens-chart
-      title="Specimen"
-      dataKey="sample_kind"
-      chartType="bar"
-      backgroundColor={["#4dc9f6", "#3da4c7"]}
-      xAxisTitle="Specimen Type"
-      yAxisTitle="Specimen"
-    ></lens-chart>
-  </div>
-  <div class="card">
-    <lens-chart
-      title="Specimen Subtypes"
-      dataKey="sample_subtype"
-      chartType="bar"
-      backgroundColor={["#4dc9f6", "#3da4c7"]}
-      xAxisTitle="Specimen Subtype"
-      yAxisTitle="Specimen"
-    ></lens-chart>
-  </div>
+    <div class="card">
+      <lens-chart
+        title="Medications"
+        dataKey="AppliedMedications"
+        chartType="bar"
+        backgroundColor={["#4dc9f6", "#3da4c7"]}
+        xAxisTitle="Medication"
+        yAxisTitle="Therapies"
+      ></lens-chart>
+    </div>
+    <div class="card">
+      <lens-chart
+        title="Specimen"
+        dataKey="sample_kind"
+        chartType="bar"
+        backgroundColor={["#4dc9f6", "#3da4c7"]}
+        xAxisTitle="Specimen Type"
+        yAxisTitle="Specimen"
+      ></lens-chart>
+    </div>
+    <div class="card">
+      <lens-chart
+        title="Specimen Subtypes"
+        dataKey="sample_subtype"
+        chartType="bar"
+        backgroundColor={["#4dc9f6", "#3da4c7"]}
+        xAxisTitle="Specimen Subtype"
+        yAxisTitle="Specimen"
+      ></lens-chart>
+    </div>
   {/if}
 
   <div id="chart-diagnosis" class="card">

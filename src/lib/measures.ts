@@ -1,10 +1,10 @@
 import type { FhirMeasureItem } from "@samply/lens";
 
 const dktkPatientsMeasure: FhirMeasureItem = {
-  key: 'patients',
+  key: "patients",
   measure: {
     code: {
-      text: 'patients',
+      text: "patients",
     },
     population: [
       {
@@ -12,43 +12,43 @@ const dktkPatientsMeasure: FhirMeasureItem = {
           coding: [
             {
               system:
-                'http://terminology.hl7.org/CodeSystem/measure-population',
-              code: 'initial-population',
+                "http://terminology.hl7.org/CodeSystem/measure-population",
+              code: "initial-population",
             },
           ],
         },
         criteria: {
-          language: 'text/cql-identifier',
-          expression: 'InInitialPopulation',
+          language: "text/cql-identifier",
+          expression: "InInitialPopulation",
         },
       },
     ],
     stratifier: [
       {
         code: {
-          text: 'Gender',
+          text: "Gender",
         },
         criteria: {
-          language: 'text/cql',
-          expression: 'Gender',
+          language: "text/cql",
+          expression: "Gender",
         },
       },
       {
         code: {
-          text: '75186-7',
+          text: "75186-7",
         },
         criteria: {
-          language: 'text/cql',
-          expression: 'Deceased',
+          language: "text/cql",
+          expression: "Deceased",
         },
       },
       {
         code: {
-          text: 'Age',
+          text: "Age",
         },
         criteria: {
-          language: 'text/cql',
-          expression: 'AgeClass',
+          language: "text/cql",
+          expression: "AgeClass",
         },
       },
     ],
@@ -63,15 +63,15 @@ DKTK_STRAT_DECEASED_STRATIFIER
 };
 
 const dktkDiagnosisMeasure: FhirMeasureItem = {
-  key: 'diagnosis',
+  key: "diagnosis",
   measure: {
     code: {
-      text: 'diagnosis',
+      text: "diagnosis",
     },
     extension: [
       {
-        url: 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-populationBasis',
-        valueCode: 'Condition',
+        url: "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-populationBasis",
+        valueCode: "Condition",
       },
     ],
     population: [
@@ -80,25 +80,25 @@ const dktkDiagnosisMeasure: FhirMeasureItem = {
           coding: [
             {
               system:
-                'http://terminology.hl7.org/CodeSystem/measure-population',
-              code: 'initial-population',
+                "http://terminology.hl7.org/CodeSystem/measure-population",
+              code: "initial-population",
             },
           ],
         },
         criteria: {
-          language: 'text/cql-identifier',
-          expression: 'Diagnosis',
+          language: "text/cql-identifier",
+          expression: "Diagnosis",
         },
       },
     ],
     stratifier: [
       {
         code: {
-          text: 'diagnosis',
+          text: "diagnosis",
         },
         criteria: {
-          language: 'text/cql-identifier',
-          expression: 'DiagnosisCode',
+          language: "text/cql-identifier",
+          expression: "DiagnosisCode",
         },
       },
     ],
@@ -109,15 +109,15 @@ DKTK_STRAT_DIAGNOSIS_STRATIFIER
 };
 
 const dktkSpecimenMeasure: FhirMeasureItem = {
-  key: 'specimen',
+  key: "specimen",
   measure: {
     code: {
-      text: 'specimen',
+      text: "specimen",
     },
     extension: [
       {
-        url: 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-populationBasis',
-        valueCode: 'Specimen',
+        url: "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-populationBasis",
+        valueCode: "Specimen",
       },
     ],
     population: [
@@ -126,25 +126,25 @@ const dktkSpecimenMeasure: FhirMeasureItem = {
           coding: [
             {
               system:
-                'http://terminology.hl7.org/CodeSystem/measure-population',
-              code: 'initial-population',
+                "http://terminology.hl7.org/CodeSystem/measure-population",
+              code: "initial-population",
             },
           ],
         },
         criteria: {
-          language: 'text/cql-identifier',
-          expression: 'Specimen',
+          language: "text/cql-identifier",
+          expression: "Specimen",
         },
       },
     ],
     stratifier: [
       {
         code: {
-          text: 'sample_kind',
+          text: "sample_kind",
         },
         criteria: {
-          language: 'text/cql',
-          expression: 'SampleType',
+          language: "text/cql",
+          expression: "SampleType",
         },
       },
     ],
@@ -155,15 +155,15 @@ DKTK_STRAT_SPECIMEN_STRATIFIER
 };
 
 const dktkProceduresMeasure: FhirMeasureItem = {
-  key: 'procedures',
+  key: "procedures",
   measure: {
     code: {
-      text: 'procedures',
+      text: "procedures",
     },
     extension: [
       {
-        url: 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-populationBasis',
-        valueCode: 'Procedure',
+        url: "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-populationBasis",
+        valueCode: "Procedure",
       },
     ],
     population: [
@@ -172,25 +172,25 @@ const dktkProceduresMeasure: FhirMeasureItem = {
           coding: [
             {
               system:
-                'http://terminology.hl7.org/CodeSystem/measure-population',
-              code: 'initial-population',
+                "http://terminology.hl7.org/CodeSystem/measure-population",
+              code: "initial-population",
             },
           ],
         },
         criteria: {
-          language: 'text/cql-identifier',
-          expression: 'Procedure',
+          language: "text/cql-identifier",
+          expression: "Procedure",
         },
       },
     ],
     stratifier: [
       {
         code: {
-          text: 'ProcedureType',
+          text: "ProcedureType",
         },
         criteria: {
-          language: 'text/cql',
-          expression: 'ProcedureType',
+          language: "text/cql",
+          expression: "ProcedureType",
         },
       },
     ],
@@ -201,15 +201,15 @@ DKTK_STRAT_PROCEDURE_STRATIFIER
 };
 
 const dktkMedicationStatementsMeasure: FhirMeasureItem = {
-  key: 'medicationStatements',
+  key: "medicationStatements",
   measure: {
     code: {
-      text: 'medicationStatements',
+      text: "medicationStatements",
     },
     extension: [
       {
-        url: 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-populationBasis',
-        valueCode: 'MedicationStatement',
+        url: "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-populationBasis",
+        valueCode: "MedicationStatement",
       },
     ],
     population: [
@@ -218,25 +218,25 @@ const dktkMedicationStatementsMeasure: FhirMeasureItem = {
           coding: [
             {
               system:
-                'http://terminology.hl7.org/CodeSystem/measure-population',
-              code: 'initial-population',
+                "http://terminology.hl7.org/CodeSystem/measure-population",
+              code: "initial-population",
             },
           ],
         },
         criteria: {
-          language: 'text/cql-identifier',
-          expression: 'MedicationStatement',
+          language: "text/cql-identifier",
+          expression: "MedicationStatement",
         },
       },
     ],
     stratifier: [
       {
         code: {
-          text: 'MedicationType',
+          text: "MedicationType",
         },
         criteria: {
-          language: 'text/cql',
-          expression: 'ProcedureType',
+          language: "text/cql",
+          expression: "ProcedureType",
         },
       },
     ],
@@ -248,113 +248,14 @@ DKTK_STRAT_MEDICATION_STRATIFIER
 
 const dhkiEncountersMeasure: FhirMeasureItem = {
   key: "encounters",
-  measure:
-    {
-      "code": {
-        "text": "Encounters"
-      },
-      "extension": [
-        {
-          "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-populationBasis",
-          "valueCode": "Encounter"
-        }
-      ],
-      "population": [
-        {
-          "code": {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                "code": "initial-population"
-              }
-            ]
-          },
-          "criteria": {
-            "language": "text/cql-identifier",
-            "expression": "Encounter"
-          }
-        }
-      ],
-      "stratifier": [
-        {
-          "code": {
-            "text": "Departments"
-          },
-          "criteria": {
-            "language": "text/cql",
-            "expression": "Departments"
-          }
-        }
-      ]
-    },
-  cql:
-  `
-define Encounter:
-if InInitialPopulation then [Encounter] else {} as List<Encounter>
-
-define function Departments(encounter FHIR.Encounter):
-encounter.identifier.where(system = 'http://dktk.dkfz.de/fhir/sid/hki-department').value.first()
-
-`
-}
-
-const dhkiEncountersMeasureProd: FhirMeasureItem = {
-  key: "encounters",
-  measure:
-    {
-      "code": {
-        "text": "Encounters"
-      },
-      "extension": [
-        {
-          "url": "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-populationBasis",
-          "valueCode": "Encounter"
-        }
-      ],
-      "population": [
-        {
-          "code": {
-            "coding": [
-              {
-                "system": "http://terminology.hl7.org/CodeSystem/measure-population",
-                "code": "initial-population"
-              }
-            ]
-          },
-          "criteria": {
-            "language": "text/cql-identifier",
-            "expression": "Encounter"
-          }
-        }
-      ],
-      "stratifier": [
-        {
-          "code": {
-            "text": "Departments"
-          },
-          "criteria": {
-            "language": "text/cql",
-            "expression": "Departments"
-          }
-        }
-      ]
-    },
-  cql:
-  `
-DHKI_STRAT_ENCOUNTER_STRATIFIER
-`
-}
-
-const dhkiSpecimenMeasure: FhirMeasureItem = {
-  key: 'specimen',
   measure: {
     code: {
-      text: 'specimen',
+      text: "Encounters",
     },
     extension: [
       {
-        url: 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-populationBasis',
-        valueCode: 'Specimen',
+        url: "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-populationBasis",
+        valueCode: "Encounter",
       },
     ],
     population: [
@@ -363,34 +264,131 @@ const dhkiSpecimenMeasure: FhirMeasureItem = {
           coding: [
             {
               system:
-                'http://terminology.hl7.org/CodeSystem/measure-population',
-              code: 'initial-population',
+                "http://terminology.hl7.org/CodeSystem/measure-population",
+              code: "initial-population",
             },
           ],
         },
         criteria: {
-          language: 'text/cql-identifier',
-          expression: 'Specimen',
+          language: "text/cql-identifier",
+          expression: "Encounter",
         },
       },
     ],
     stratifier: [
       {
         code: {
-          text: 'sample_kind',
+          text: "Departments",
         },
         criteria: {
-          language: 'text/cql',
-          expression: 'SampleType',
+          language: "text/cql",
+          expression: "Departments",
+        },
+      },
+    ],
+  },
+  cql: `
+define Encounter:
+if InInitialPopulation then [Encounter] else {} as List<Encounter>
+
+define function Departments(encounter FHIR.Encounter):
+encounter.identifier.where(system = 'http://dktk.dkfz.de/fhir/sid/hki-department').value.first()
+
+`,
+};
+
+const dhkiEncountersMeasureProd: FhirMeasureItem = {
+  key: "encounters",
+  measure: {
+    code: {
+      text: "Encounters",
+    },
+    extension: [
+      {
+        url: "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-populationBasis",
+        valueCode: "Encounter",
+      },
+    ],
+    population: [
+      {
+        code: {
+          coding: [
+            {
+              system:
+                "http://terminology.hl7.org/CodeSystem/measure-population",
+              code: "initial-population",
+            },
+          ],
+        },
+        criteria: {
+          language: "text/cql-identifier",
+          expression: "Encounter",
+        },
+      },
+    ],
+    stratifier: [
+      {
+        code: {
+          text: "Departments",
+        },
+        criteria: {
+          language: "text/cql",
+          expression: "Departments",
+        },
+      },
+    ],
+  },
+  cql: `
+DHKI_STRAT_ENCOUNTER_STRATIFIER
+`,
+};
+
+const dhkiSpecimenMeasure: FhirMeasureItem = {
+  key: "specimen",
+  measure: {
+    code: {
+      text: "specimen",
+    },
+    extension: [
+      {
+        url: "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-populationBasis",
+        valueCode: "Specimen",
+      },
+    ],
+    population: [
+      {
+        code: {
+          coding: [
+            {
+              system:
+                "http://terminology.hl7.org/CodeSystem/measure-population",
+              code: "initial-population",
+            },
+          ],
+        },
+        criteria: {
+          language: "text/cql-identifier",
+          expression: "Specimen",
+        },
+      },
+    ],
+    stratifier: [
+      {
+        code: {
+          text: "sample_kind",
+        },
+        criteria: {
+          language: "text/cql",
+          expression: "SampleType",
         },
       },
       {
         code: {
-          text: 'sample_subtype',
+          text: "sample_subtype",
         },
         criteria: {
-          language: 'text/cql',
-          expression: 'SampleSubtype',
+          language: "text/cql",
+          expression: "SampleSubtype",
         },
       },
       // {
@@ -418,15 +416,15 @@ specimen.type.text.first()
 };
 
 const dhkiSpecimenMeasureProd: FhirMeasureItem = {
-  key: 'specimen',
+  key: "specimen",
   measure: {
     code: {
-      text: 'specimen',
+      text: "specimen",
     },
     extension: [
       {
-        url: 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-populationBasis',
-        valueCode: 'Specimen',
+        url: "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-populationBasis",
+        valueCode: "Specimen",
       },
     ],
     population: [
@@ -435,34 +433,34 @@ const dhkiSpecimenMeasureProd: FhirMeasureItem = {
           coding: [
             {
               system:
-                'http://terminology.hl7.org/CodeSystem/measure-population',
-              code: 'initial-population',
+                "http://terminology.hl7.org/CodeSystem/measure-population",
+              code: "initial-population",
             },
           ],
         },
         criteria: {
-          language: 'text/cql-identifier',
-          expression: 'Specimen',
+          language: "text/cql-identifier",
+          expression: "Specimen",
         },
       },
     ],
     stratifier: [
       {
         code: {
-          text: 'sample_kind',
+          text: "sample_kind",
         },
         criteria: {
-          language: 'text/cql',
-          expression: 'SampleType',
+          language: "text/cql",
+          expression: "SampleType",
         },
       },
       {
         code: {
-          text: 'sample_subtype',
+          text: "sample_subtype",
         },
         criteria: {
-          language: 'text/cql',
-          expression: 'SampleSubtype',
+          language: "text/cql",
+          expression: "SampleSubtype",
         },
       },
       // {
@@ -482,15 +480,15 @@ DHKI_STRAT_SPECIMEN_STRATIFIER
 };
 
 const dhkiMedicationStatementsMeasure: FhirMeasureItem = {
-  key: 'medicationStatements',
+  key: "medicationStatements",
   measure: {
     code: {
-      text: 'medicationStatements',
+      text: "medicationStatements",
     },
     extension: [
       {
-        url: 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-populationBasis',
-        valueCode: 'MedicationStatement',
+        url: "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-populationBasis",
+        valueCode: "MedicationStatement",
       },
     ],
     population: [
@@ -499,34 +497,34 @@ const dhkiMedicationStatementsMeasure: FhirMeasureItem = {
           coding: [
             {
               system:
-                'http://terminology.hl7.org/CodeSystem/measure-population',
-              code: 'initial-population',
+                "http://terminology.hl7.org/CodeSystem/measure-population",
+              code: "initial-population",
             },
           ],
         },
         criteria: {
-          language: 'text/cql-identifier',
-          expression: 'MedicationStatement',
+          language: "text/cql-identifier",
+          expression: "MedicationStatement",
         },
       },
     ],
     stratifier: [
       {
         code: {
-          text: 'MedicationType',
+          text: "MedicationType",
         },
         criteria: {
-          language: 'text/cql',
-          expression: 'ProcedureType',
+          language: "text/cql",
+          expression: "ProcedureType",
         },
       },
       {
         code: {
-          text: 'AppliedMedications',
+          text: "AppliedMedications",
         },
         criteria: {
-          language: 'text/cql',
-          expression: 'AppliedMedications',
+          language: "text/cql",
+          expression: "AppliedMedications",
         },
       },
     ],
@@ -538,18 +536,18 @@ if InInitialPopulation then [MedicationStatement] else {} as List <MedicationSta
 define function AppliedMedications(medication FHIR.MedicationStatement):
 medication.medication.coding.code.last()
 `,
-}
+};
 
 const dhkiMedicationStatementsMeasureProd: FhirMeasureItem = {
-  key: 'medicationStatements',
+  key: "medicationStatements",
   measure: {
     code: {
-      text: 'medicationStatements',
+      text: "medicationStatements",
     },
     extension: [
       {
-        url: 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-populationBasis',
-        valueCode: 'MedicationStatement',
+        url: "http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-populationBasis",
+        valueCode: "MedicationStatement",
       },
     ],
     population: [
@@ -558,34 +556,34 @@ const dhkiMedicationStatementsMeasureProd: FhirMeasureItem = {
           coding: [
             {
               system:
-                'http://terminology.hl7.org/CodeSystem/measure-population',
-              code: 'initial-population',
+                "http://terminology.hl7.org/CodeSystem/measure-population",
+              code: "initial-population",
             },
           ],
         },
         criteria: {
-          language: 'text/cql-identifier',
-          expression: 'MedicationStatement',
+          language: "text/cql-identifier",
+          expression: "MedicationStatement",
         },
       },
     ],
     stratifier: [
       {
         code: {
-          text: 'MedicationType',
+          text: "MedicationType",
         },
         criteria: {
-          language: 'text/cql',
-          expression: 'ProcedureType',
+          language: "text/cql",
+          expression: "ProcedureType",
         },
       },
       {
         code: {
-          text: 'AppliedMedications',
+          text: "AppliedMedications",
         },
         criteria: {
-          language: 'text/cql',
-          expression: 'AppliedMedications',
+          language: "text/cql",
+          expression: "AppliedMedications",
         },
       },
     ],
@@ -593,13 +591,13 @@ const dhkiMedicationStatementsMeasureProd: FhirMeasureItem = {
   cql: `
 DHKI_STRAT_MEDICATION_STRATIFIER
 `,
-}
+};
 
 export const measures: FhirMeasureItem[] = [
-    dktkPatientsMeasure,
-      dktkDiagnosisMeasure,
-      dhkiSpecimenMeasureProd,
-      dktkProceduresMeasure,
-      dhkiMedicationStatementsMeasureProd,
-      dhkiEncountersMeasureProd,
+  dktkPatientsMeasure,
+  dktkDiagnosisMeasure,
+  dhkiSpecimenMeasureProd,
+  dktkProceduresMeasure,
+  dhkiMedicationStatementsMeasureProd,
+  dhkiEncountersMeasureProd,
 ];
