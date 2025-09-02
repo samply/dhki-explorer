@@ -400,6 +400,7 @@
 
     #chart-diagnosis {
       grid-column: 2 / -1;
+      min-height: 25rem;
     }
   }
 
