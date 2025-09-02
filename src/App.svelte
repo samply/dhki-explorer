@@ -132,8 +132,10 @@
     const grouped: Record<string, number> = {};
     for (const [diagnosis, count] of Object.entries(diagnoses)) {
       const category = diagnosis.split('.')[0];
-      const mappedCategory = mapping[category] ?? category;
-      grouped[mappedCategory] = (grouped[mappedCategory] ?? 0) + count;
+      const mappedCategory = mapping[category];
+      if (mappedCategory) {
+        grouped[mappedCategory] = (grouped[mappedCategory] ?? 0) + count;
+      }
     }
     return grouped;
   }
