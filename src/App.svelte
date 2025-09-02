@@ -73,6 +73,71 @@
     }
   }
 
+  function groupDiagnoses(diagnoses: Record<string, number>): Record<string, number> {
+    const mapping: Record<string, string> = {
+      "C32": "Larynx",
+      "C15": "Esophagus",
+      "C16": "Stomach",
+      "C18": "Intestine",
+      "C19": "Intestine",
+      "C20": "Intestine",
+      "C21": "Intestine",
+      "C22": "Liver",
+      "C23": "Gall Bladder",
+      "C24": "Gall Bladder",
+      "C25": "Pancreas",
+      "C33": "Lung",
+      "C34": "Lung",
+      "C43": "Malignant Melanoma",
+      "C40": "Tissue",
+      "C41": "Tissue",
+      "C45": "Tissue",
+      "C46": "Tissue",
+      "C47": "Tissue",
+      "C48": "Tissue",
+      "C49": "Tissue",
+      "D05": "DCIS",
+      "C50": "Breast",
+      "C51": "Vulva",
+      "C53": "Cervix",
+      "C54": "Uterus",
+      "C55": "Uterus",
+      "C56": "Ovary",
+      "C61": "Prostate",
+      "C62": "Testes",
+      "C64": "Kidney",
+      "C67": "Urinary Bladder",
+      "C70": "CNS",
+      "C71": "CNS",
+      "C72": "CNS",
+      "C73": "Thyroid",
+      "C81": "Morbus Hodgkin",
+      "C82": "NHL",
+      "C83": "NHL",
+      "C84": "NHL",
+      "C85": "NHL",
+      "C90": "Plasmocytoma",
+      "C91": "Leukemias",
+      "C92": "Leukemias",
+      "C93": "Leukemias",
+      "C94": "Leukemias",
+      "C95": "Leukemias",
+      "C86": "Hematological",
+      "C87": "Hematological",
+      "C88": "Hematological",
+      "C96": "Hematological",
+      "C44": "Skin other"
+    };
+
+    const grouped: Record<string, number> = {};
+    for (const [diagnosis, count] of Object.entries(diagnoses)) {
+      const category = diagnosis.split('.')[0];
+      const mappedCategory = mapping[category] ?? category;
+      grouped[mappedCategory] = (grouped[mappedCategory] ?? 0) + count;
+    }
+    return grouped;
+  }
+
   function updateChartVisibility() {
     const query = getQueryStore();
     // Only one search bar
@@ -121,6 +186,7 @@
       } else if (result.status === "succeeded") {
         const siteResult = JSON.parse(atob(result.body));
         console.log(siteResult);
+        siteResult.stratifiers.diagnosis = groupDiagnoses(siteResult.stratifiers.diagnosis);
         setSiteResult(site, siteResult);
         updateDepartments(siteResult.stratifiers.Departments);
       } else {
