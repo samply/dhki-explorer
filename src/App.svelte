@@ -10,6 +10,7 @@
     buildMeasure,
     querySpot,
     setSiteResult,
+    markSiteClaimed,
     getQueryStore,
     type SpotResult,
     type LensOptions,
@@ -186,7 +187,7 @@
     querySpot(query, abortController.signal, (result: SpotResult) => {
       const site = result.from.split(".")[1];
       if (result.status === "claimed") {
-        // markSiteClaimed(site);
+        markSiteClaimed(site);
       } else if (result.status === "succeeded") {
         const siteResult = JSON.parse(atob(result.body));
         console.log(siteResult);
@@ -215,6 +216,7 @@
 <div id="search-wrapper">
   <lens-search-bar></lens-search-bar>
   <lens-query-explain-button></lens-query-explain-button>
+  <lens-query-spinner></lens-query-spinner>
   <lens-search-button></lens-search-button>
 </div>
 <div id="main-grid">
