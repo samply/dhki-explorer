@@ -1,4 +1,3 @@
-version: '3.8'
 services:
   traefik:
     image: traefik:latest
@@ -47,7 +46,7 @@ services:
       - "traefik.http.routers.oauth2.tls=true"
 
   lens:
-    image: docker.verbis.dkfz.de/hki/lens:1
+    image: samply/dhki-explorer:main
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.lens.rule=Host(`${GUI_HOST}`)"
@@ -55,34 +54,38 @@ services:
       - "traefik.http.routers.lens.middlewares=traefik-forward-auth"
 
   spot:
-    # NOTE: This will be replaced by https://github.com/samply/spot soon.
-    image: docker.verbis.dkfz.de/ccp-private/central-spot
+    image: samply/rustyspot:main
     environment:
-      PROJECT_METADATA: "dktk_supervisors"
       BEAM_SECRET: "${LOCAL_BEAM_SECRET}"
-      BEAM_URL: http://beam-proxy:8081
-      BEAM_PROXY_ID: ${LOCAL_BEAM_ID}
-      BEAM_BROKER_ID: ${BROKER_HOST}
-      BEAM_APP_ID: "focus"
+      BEAM_PROXY_URL: http://beam-proxy:8081
+      BEAM_APP_ID: "spot.${LOCAL_BEAM_ID}.${BROKER_HOST}"
+      CORS_ORIGIN: "https://${GUI_HOST}"
+      TRANSFORM: LENS
+      RUST_LOG: "info"
+      LOG_FILE: /logs/requests.log
+    volumes:
+      - ./logs:/logs
     depends_on:
       - "beam-proxy"
     labels:
       - "traefik.enable=true"
-      - "traefik.http.services.spot.loadbalancer.server.port=8080"
+      - "traefik.http.services.spot.loadbalancer.server.port=8055"
       - "traefik.http.middlewares.corsheaders.headers.accesscontrolallowmethods=GET,OPTIONS,POST"
+      - "traefik.http.middlewares.corsheaders.headers.accesscontrolallowheaders=content-type"
       - "traefik.http.middlewares.corsheaders.headers.accesscontrolalloworiginlist=https://${GUI_HOST}"
       - "traefik.http.middlewares.corsheaders.headers.accesscontrolallowcredentials=true"
       - "traefik.http.middlewares.corsheaders.headers.accesscontrolmaxage=-1"
       - "traefik.http.routers.spot.rule=Host(`${GUI_HOST}`) && PathPrefix(`/backend`)"
       - "traefik.http.middlewares.spot-strip-prefix.stripprefix.prefixes=/backend"
-      - "traefik.http.routers.spot.middlewares=corsheaders,traefik-forward-auth,spot-strip-prefix"
       - "traefik.http.routers.spot.tls=true"
+      - "traefik.http.routers.spot.middlewares=corsheaders,traefik-forward-auth,spot-strip-prefix"
+
   beam-proxy:
-    image: docker.verbis.dkfz.de/cache/samply/beam-proxy:develop
+    image: samply/beam-proxy:main
     environment:
       BROKER_URL: https://${BROKER_HOST}
       PROXY_ID: ${LOCAL_BEAM_ID}.${BROKER_HOST}
-      APP_focus_KEY: ${LOCAL_BEAM_SECRET}
+      APP_spot_KEY: ${LOCAL_BEAM_SECRET}
       PRIVKEY_FILE: /run/secrets/proxy.pem
       ALL_PROXY: ${http_proxy}
     secrets:
