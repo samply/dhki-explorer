@@ -227,7 +227,7 @@
     <div id="main-grid">
       <div id="result-summary" class="card">
         <lens-result-summary></lens-result-summary>
-        <lens-search-modified-display></lens-search-modified-display>
+        <!-- <lens-search-modified-display></lens-search-modified-display> -->
       </div>
       <div id="department-table" class="card">
         <h4>Associated Members</h4>
