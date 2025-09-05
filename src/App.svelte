@@ -206,139 +206,149 @@
   });
 </script>
 
-<header class="card">
-  <h1>DKFZ Hector Cancer Institute at the University Medicine Mannheim</h1>
-  <img src="../logo-dkfz.svg" alt="DKFZ" />
-  <img src="../logo_umm.svg" alt="UMM" />
-  <img src="../logo_mfm_ukm.svg" alt="MFM" />
-  <img src="../logo-hector.png" alt="Hector" />
-</header>
-<div id="search-wrapper">
-  <lens-search-bar></lens-search-bar>
-  <lens-query-explain-button></lens-query-explain-button>
-  <lens-query-spinner></lens-query-spinner>
-  <lens-search-button></lens-search-button>
-</div>
-<div id="main-grid">
-  <div id="catalogue" class="card">
-    <lens-catalogue toggle={{ collapsable: false }}></lens-catalogue>
+<div id="main-wrapper">
+  <header class="card">
+    <h1>DKFZ Hector Cancer Institute at the University Medicine Mannheim</h1>
+    <img src="../logo-dkfz.svg" alt="DKFZ" />
+    <img src="../logo_umm.svg" alt="UMM" />
+    <img src="../logo_mfm_ukm.svg" alt="MFM" />
+    <img src="../logo-hector.png" alt="Hector" />
+  </header>
+  <div id="search-wrapper">
+    <lens-search-bar></lens-search-bar>
+    <lens-query-explain-button></lens-query-explain-button>
+    <lens-query-spinner></lens-query-spinner>
+    <lens-search-button></lens-search-button>
   </div>
-  <div id="result-summary" class="card">
-    <lens-result-summary></lens-result-summary>
-  </div>
-  <div id="department-table" class="card">
-    <h4>Associated Members</h4>
-    <table>
-      <thead>
-        <tr>
-          <th>Site</th>
-          <th>Cases</th>
-        </tr>
-      </thead>
-      <tbody>
-        {#each Object.entries(departments).sort((a, b) => b[1] - a[1]) as [dept, count] (dept)}
-          <tr>
-            <td>{dept}</td>
-            <td>{count}</td>
-          </tr>
-        {/each}
-      </tbody>
-    </table>
-  </div>
-  <div class="card">
-    <lens-chart
-      title="Gender distribution"
-      dataKey="Gender"
-      chartType="pie"
-      displayLegends={true}
-    ></lens-chart>
-  </div>
-  <div class="card">
-    <lens-chart
-      title="Age distribution"
-      dataKey="Age"
-      chartType="bar"
-      backgroundColor={["#4dc9f6", "#3da4c7"]}
-      xAxisTitle="Age"
-      yAxisTitle="Patients"
-      groupRange={10}
-    ></lens-chart>
-  </div>
-  <div class="card">
-    <lens-chart
-      title="Type of therapy"
-      dataKey="ProcedureType"
-      chartType="bar"
-      backgroundColor={["#4dc9f6", "#3da4c7"]}
-      xAxisTitle="Type of Therapy"
-      yAxisTitle="Therapies"
-    ></lens-chart>
-  </div>
-  <div class="card">
-    <lens-chart
-      title="Systemic Therapy"
-      dataKey="MedicationType"
-      chartType="bar"
-      backgroundColor={["#4dc9f6", "#3da4c7"]}
-      xAxisTitle="Type of Therapy"
-      yAxisTitle="Therapies"
-    ></lens-chart>
-  </div>
+  <div id="catalogue-and-grid-wrapper">
+    <div id="catalogue" class="card">
+      <lens-catalogue toggle={{ collapsable: false }}></lens-catalogue>
+    </div>
+    <div id="main-grid">
+      <div id="result-summary" class="card">
+        <lens-result-summary></lens-result-summary>
+        <lens-search-modified-display></lens-search-modified-display>
+      </div>
+      <div id="department-table" class="card">
+        <h4>Associated Members</h4>
+        <table>
+          <thead>
+            <tr>
+              <th>Site</th>
+              <th>Cases</th>
+            </tr>
+          </thead>
+          <tbody>
+            {#each Object.entries(departments).sort((a, b) => b[1] - a[1]) as [dept, count] (dept)}
+              <tr>
+                <td>{dept}</td>
+                <td>{count}</td>
+              </tr>
+            {/each}
+          </tbody>
+        </table>
+      </div>
+      <div class="card">
+        <lens-chart
+          title="Gender distribution"
+          dataKey="Gender"
+          chartType="pie"
+          displayLegends={true}
+        ></lens-chart>
+      </div>
+      <div class="card">
+        <lens-chart
+          title="Age distribution"
+          dataKey="Age"
+          chartType="bar"
+          backgroundColor={["#4dc9f6", "#3da4c7"]}
+          xAxisTitle="Age"
+          yAxisTitle="Patients"
+          groupRange={10}
+        ></lens-chart>
+      </div>
+      <div class="card">
+        <lens-chart
+          title="Type of therapy"
+          dataKey="ProcedureType"
+          chartType="bar"
+          backgroundColor={["#4dc9f6", "#3da4c7"]}
+          xAxisTitle="Type of Therapy"
+          yAxisTitle="Therapies"
+        ></lens-chart>
+      </div>
+      <div class="card">
+        <lens-chart
+          title="Systemic Therapy"
+          dataKey="MedicationType"
+          chartType="bar"
+          backgroundColor={["#4dc9f6", "#3da4c7"]}
+          xAxisTitle="Type of Therapy"
+          yAxisTitle="Therapies"
+        ></lens-chart>
+      </div>
 
-  {#if consentSpecificChartsVisible}
-    <div class="card">
-      <lens-chart
-        title="Medications"
-        dataKey="AppliedMedications"
-        chartType="bar"
-        backgroundColor={["#4dc9f6", "#3da4c7"]}
-        xAxisTitle="Medication"
-        yAxisTitle="Therapies"
-      ></lens-chart>
-    </div>
-    <div class="card">
-      <lens-chart
-        title="Specimen"
-        dataKey="sample_kind"
-        chartType="bar"
-        backgroundColor={["#4dc9f6", "#3da4c7"]}
-        xAxisTitle="Specimen Type"
-        yAxisTitle="Specimen"
-      ></lens-chart>
-    </div>
-    <div class="card">
-      <lens-chart
-        title="Specimen Subtypes"
-        dataKey="sample_subtype"
-        chartType="bar"
-        backgroundColor={["#4dc9f6", "#3da4c7"]}
-        xAxisTitle="Specimen Subtype"
-        yAxisTitle="Specimen"
-      ></lens-chart>
-    </div>
-  {/if}
+      {#if consentSpecificChartsVisible}
+        <div class="card">
+          <lens-chart
+            title="Medications"
+            dataKey="AppliedMedications"
+            chartType="bar"
+            backgroundColor={["#4dc9f6", "#3da4c7"]}
+            xAxisTitle="Medication"
+            yAxisTitle="Therapies"
+          ></lens-chart>
+        </div>
+        <div class="card">
+          <lens-chart
+            title="Specimen"
+            dataKey="sample_kind"
+            chartType="bar"
+            backgroundColor={["#4dc9f6", "#3da4c7"]}
+            xAxisTitle="Specimen Type"
+            yAxisTitle="Specimen"
+          ></lens-chart>
+        </div>
+        <div class="card">
+          <lens-chart
+            title="Specimen Subtypes"
+            dataKey="sample_subtype"
+            chartType="bar"
+            backgroundColor={["#4dc9f6", "#3da4c7"]}
+            xAxisTitle="Specimen Subtype"
+            yAxisTitle="Specimen"
+          ></lens-chart>
+        </div>
+      {/if}
 
-  <div id="chart-diagnosis" class="card">
-    <lens-chart
-      title="Diagnosis"
-      dataKey="diagnosis"
-      chartType="bar"
-      backgroundColor={["#4dc9f6", "#3da4c7"]}
-      xAxisTitle="ICD-10 Code"
-      yAxisTitle="Diagnoses"
-    ></lens-chart>
+      <div id="chart-diagnosis" class="card">
+        <lens-chart
+          title="Diagnosis"
+          dataKey="diagnosis"
+          chartType="bar"
+          backgroundColor={["#4dc9f6", "#3da4c7"]}
+          xAxisTitle="ICD-10 Code"
+          yAxisTitle="Diagnoses"
+        ></lens-chart>
+      </div>
+    </div>
   </div>
+  <footer class="card">
+    <p>
+      Made with ♥ and <a href="https://github.com/samply/lens">samply/lens</a>
+    </p>
+    <img src="../dktk-en.png" alt="DKTK" />
+  </footer>
 </div>
-<footer class="card">
-  <p>
-    Made with ♥ and <a href="https://github.com/samply/lens">samply/lens</a>
-  </p>
-  <img src="../dktk-en.png" alt="DKTK" />
-</footer>
 
 <style>
-  :root {
+  #main-wrapper {
+    padding: var(--gap-xs);
+    gap: var(--gap-xs);
     background-color: #f8f8ff;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
   }
 
   .card {
@@ -349,7 +359,6 @@
   }
 
   header {
-    margin: var(--gap-xs);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -363,27 +372,37 @@
   }
 
   #search-wrapper {
-    margin: var(--gap-xs);
     display: flex;
     gap: var(--gap-xs);
+    align-items: center;
     lens-search-bar {
-      flex-grow: 1;
+      flex: 1;
     }
   }
 
+  #catalogue-and-grid-wrapper {
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    gap: var(--gap-xs);
+  }
+
+  #catalogue {
+    flex: 1;
+    max-width: 30rem;
+    overflow-y: auto;
+  }
+
   #main-grid {
-    margin: var(--gap-xs);
+    flex: 1;
+    overflow-y: auto;
+
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: var(--gap-xs);
 
-    #catalogue {
-      grid-column: 1 / 2;
-      grid-row: 1 / 6;
-    }
-
     #result-summary {
-      grid-column: 2 / -1;
+      grid-column: 1 / -1;
     }
 
     #department-table {
@@ -401,13 +420,12 @@
     }
 
     #chart-diagnosis {
-      grid-column: 2 / -1;
-      min-height: 25rem;
+      grid-column: span 3;
+      /* min-height: 25rem; */
     }
   }
 
   footer {
-    margin: var(--gap-xs);
     display: flex;
     justify-content: space-between;
     align-items: center;
