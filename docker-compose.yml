@@ -8,7 +8,6 @@ services:
       - --entrypoints.web.http.redirections.entrypoint.scheme=https
       - --providers.docker=true
       - --providers.docker.exposedbydefault=false
-      - --providers.file.directory=/conf/
       - --accesslog=true
     ports:
       - "80:80"
