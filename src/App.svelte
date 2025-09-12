@@ -52,8 +52,6 @@
       // "???": "Transfusion Medicine and Immunology",
       "UMM/ Klinik für Urologie": "Urology",
       // manually set in ETL Prozess for onkostar datasets
-      "HKI - Personalisierte Onkologie":
-        "Translational Clinical Trial Unit at DKFZ Hector CI",
       // right now not associated with hector
       // "UMM/ Augenklinik": "Augenklinik",
       // "UMM/ Hals-Nasen-Ohren-Klinik": "Ear, nose and throat department",
