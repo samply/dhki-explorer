@@ -33,6 +33,7 @@
   });
 
   let consentSpecificChartsVisible = $state(false);
+  let includeTestDataChecked = $state(false);
   let departments: Record<string, number> = $state({});
 
   function updateDepartments(depts: Record<string, number>) {
@@ -51,7 +52,7 @@
       "UMM/ Radiologie und Nuklearmedizin": "Radiology and nuclear medicine",
       // "???": "Transfusion Medicine and Immunology",
       "UMM/ Klinik für Urologie": "Urology",
-      "HKI - Personalisierte Onkologie": "Testdaten",
+      "HKI - Personalisierte Onkologie": "Test data",
       // manually set in ETL Prozess for onkostar datasets
       // right now not associated with hector
       // "UMM/ Augenklinik": "Augenklinik",
@@ -183,13 +184,21 @@
         measure,
       }),
     );
+
+    // Copy the value so it doesn't change mid-query
+    const includeTestData = includeTestDataChecked;
     querySpot(query, abortController.signal, (result: SpotResult) => {
       const site = result.from.split(".")[1];
+  
+      if (site === "dkfz-test" && !includeTestData) {
+        return;
+      }
+
       if (result.status === "claimed") {
         markSiteClaimed(site);
       } else if (result.status === "succeeded") {
         const siteResult = JSON.parse(atob(result.body));
-        console.log(siteResult);
+        console.log(`Site ${site} succeeded:`, siteResult);
         siteResult.stratifiers.diagnosis = groupDiagnoses(
           siteResult.stratifiers.diagnosis,
         );
@@ -216,6 +225,10 @@
   <div id="search-wrapper">
     <lens-search-bar></lens-search-bar>
     <lens-query-explain-button></lens-query-explain-button>
+    <label>
+      <input type="checkbox" bind:checked={includeTestDataChecked} />
+      Include test data
+    </label>
     <lens-query-spinner></lens-query-spinner>
     <lens-search-button></lens-search-button>
   </div>
