@@ -51,6 +51,7 @@
       "UMM/ Radiologie und Nuklearmedizin": "Radiology and nuclear medicine",
       // "???": "Transfusion Medicine and Immunology",
       "UMM/ Klinik für Urologie": "Urology",
+      "HKI - Personalisierte Onkologie": "Testdaten",
       // manually set in ETL Prozess for onkostar datasets
       // right now not associated with hector
       // "UMM/ Augenklinik": "Augenklinik",

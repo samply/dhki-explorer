@@ -1,6 +1,6 @@
 {
-  "spotUrl": "https://explorer.hector.dkfz.de/backend/",
-  "sitesToQuery": ["dkfz", "uk"],
+  "spotUrl": "http://localhost:8055",
+  "sitesToQuery": ["dkfz-test", "dkfz", "uk"],
   "resultSummaryOptions": {
     "title": "Results",
     "dataTypes": [
