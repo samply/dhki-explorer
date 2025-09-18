@@ -189,7 +189,7 @@
     const includeTestData = includeTestDataChecked;
     querySpot(query, abortController.signal, (result: SpotResult) => {
       const site = result.from.split(".")[1];
-  
+
       if (site === "dkfz-test" && !includeTestData) {
         return;
       }
