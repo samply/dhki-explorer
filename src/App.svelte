@@ -181,7 +181,7 @@
 
     /** Helper function to base64 encode a UTF-8 string */
     const base64Encode = (utf8String: string) =>
-        btoa(String.fromCharCode(...new TextEncoder().encode(utf8String)));
+      btoa(String.fromCharCode(...new TextEncoder().encode(utf8String)));
 
     const query = base64Encode(
       JSON.stringify({
