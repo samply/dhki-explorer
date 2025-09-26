@@ -15,6 +15,7 @@
     type SpotResult,
     type LensOptions,
     type Catalogue,
+    hideFailedSite,
   } from "@samply/lens";
   import options from "./config/options.json";
   import catalogue from "./config/catalogue.json";
@@ -177,7 +178,12 @@
     resetDiagrams();
     updateChartVisibility();
     departments = {};
-    const query = btoa(
+
+    /** Helper function to base64 encode a UTF-8 string */
+    const base64Encode = (utf8String: string) =>
+      btoa(String.fromCharCode(...new TextEncoder().encode(utf8String)));
+
+    const query = base64Encode(
       JSON.stringify({
         lang: "cql",
         lib,
@@ -205,6 +211,7 @@
         setSiteResult(site, siteResult);
         updateDepartments(siteResult.stratifiers.Departments);
       } else {
+        hideFailedSite(site);
         console.error(
           `Site ${site} failed with status ${result.status}:`,
           result.body,
@@ -352,6 +359,8 @@
     <img src="../dktk-en.png" alt="DKTK" />
   </footer>
 </div>
+
+<lens-toast></lens-toast>
 
 <style>
   #main-wrapper {
