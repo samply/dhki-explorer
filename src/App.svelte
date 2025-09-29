@@ -225,7 +225,9 @@
     });
   });
 
-  function removeBronchoscopy(stratifiers) {
+  function removeBronchoscopy(
+    stratifiers: Record<string, Record<string, number>>,
+  ) {
     let sample_kind_stratifier = stratifiers.sample_kind;
     delete sample_kind_stratifier["Bronchoscopy"];
     stratifiers.sample_kind = sample_kind_stratifier;
@@ -434,9 +436,9 @@
     grid-template-columns: repeat(4, 1fr);
     gap: var(--gap-xs);
 
-    #result-summary {
+    /*#result-summary {
       grid-column: 1 / -1;
-    }
+    }*/
 
     #department-table {
       table {
