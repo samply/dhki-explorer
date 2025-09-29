@@ -79,58 +79,61 @@
     diagnoses: Record<string, number>,
   ): Record<string, number> {
     const mapping: Record<string, string> = {
-      C32: "Larynx",
-      C15: "Esophagus",
-      C16: "Stomach",
-      C18: "Intestine",
-      C19: "Intestine",
-      C20: "Intestine",
-      C21: "Intestine",
-      C22: "Liver",
-      C23: "Gall Bladder",
-      C24: "Gall Bladder",
-      C25: "Pancreas",
-      C33: "Lung",
-      C34: "Lung",
-      C43: "Malignant Melanoma",
-      C40: "Tissue",
-      C41: "Tissue",
-      C45: "Tissue",
-      C46: "Tissue",
-      C47: "Tissue",
-      C48: "Tissue",
-      C49: "Tissue",
-      D05: "DCIS",
-      C50: "Breast",
-      C51: "Vulva",
-      C53: "Cervix",
-      C54: "Uterus",
-      C55: "Uterus",
-      C56: "Ovary",
-      C61: "Prostate",
-      C62: "Testes",
-      C64: "Kidney",
-      C67: "Urinary Bladder",
-      C70: "CNS",
-      C71: "CNS",
-      C72: "CNS",
-      C73: "Thyroid",
-      C81: "Morbus Hodgkin",
-      C82: "NHL",
-      C83: "NHL",
-      C84: "NHL",
-      C85: "NHL",
-      C90: "Plasmocytoma",
-      C91: "Leukemias",
-      C92: "Leukemias",
-      C93: "Leukemias",
-      C94: "Leukemias",
-      C95: "Leukemias",
-      C86: "Hematological",
-      C87: "Hematological",
-      C88: "Hematological",
-      C96: "Hematological",
-      C44: "Skin other",
+      C32: "Malignant neoplasm of larynx",
+      C15: "Malignant neoplasm of esophagus",
+      C16: "Malignant neoplasm of stomach",
+      C18: "Malignant neoplasm of colon",
+      C19: "Malignant neoplasm of rectosigmoid junction",
+      C20: "Malignant neoplasm of rectum",
+      C21: "Malignant neoplasm of anus and anal canal",
+      C22: "Malignant neoplasm of liver and intrahepatic bile ducts",
+      C23: "Malignant neoplasm of gallbladder",
+      C24: "Malignant neoplasm of other and unspecified parts of biliary tract",
+      C25: "Malignant neoplasm of pancreas",
+      C33: "Malignant neoplasm of trachea",
+      C34: "Malignant neoplasm of bronchus and lung",
+      C37: "Malignant neoplasm of thymus",
+      C43: "Malignant melanoma of skin",
+      C40: "Malignant neoplasm of bone and articular cartilage of limbs",
+      C41: "Malignant neoplasm of bone and articular cartilage of other and unspecified sites",
+      C45: "Mesothelioma",
+      C46: "Kaposi's sarcoma",
+      C47: "Malignant neoplasm of peripheral nerves and autonomic nervous system",
+      C48: "Malignant neoplasm of retroperitoneum and peritoneum",
+      C49: "Malignant neoplasm of other connective and soft tissue",
+      C50: "Malignant neoplasms of breast",
+      C51: "Malignant neoplasm of vagina",
+      C53: "Malignant neoplasm of cervix uteri",
+      C54: "Malignant neoplasm of corpus uteri",
+      C55: "Malignant neoplasm of uterus, part unspecified",
+      C56: "Malignant neoplasm of ovary",
+      C61: "Malignant neoplasm of prostate",
+      C62: "Malignant neoplasm of testis",
+      C64: "Malignant neoplasm of kidney, except renal pelvis",
+      C67: "Malignant neoplasm of bladder",
+      C70: "Malignant neoplasm of meninges",
+      C71: "Malignant neoplasm of brain",
+      C72: "Malignant neoplasm of spinal cord, cranial nerves and other parts of central nervous system",
+      C73: "Malignant neoplasm of thyroid gland",
+      C80: "Malignant neoplasm without specification of site",
+      C81: "Hodgkin lymphoma",
+      C82: "Follicular lymphoma",
+      C83: "Non-follicular lymphoma",
+      C84: "Mature T/NK-cell lymphomas",
+      C85: "Other specified and unspecified types of non-Hodgkin lymphoma",
+      C86: "Other specified types of T/NK-cell lymphoma",
+      // Does not seem to exist: https://www.icd-code.de/suche/icd/recherche.html?sp=0&sp=SC87
+      // C87: "Hematological",
+      C88: "Malignant immunoproliferative diseases and certain other B-cell lymphomas",
+      C90: "Multiple myeloma and malignant plasma cell neoplasms",
+      C91: "Lymphoid leukemia",
+      C92: "Myeloid leukemia",
+      C93: "Monocytic leukemia",
+      C94: "Other leukemias of specified cell type",
+      C95: "Leukemia of unspecified cell type",
+      C96: "Other and unspecified malignant neoplasms of lymphoid, hematopoietic and related tissue",
+      C44: "Other and unspecified malignant neoplasm of skin",
+      D05: "Carcinoma in situ of breast",
     };
 
     const grouped: Record<string, number> = {};
@@ -208,6 +211,8 @@
         siteResult.stratifiers.diagnosis = groupDiagnoses(
           siteResult.stratifiers.diagnosis,
         );
+        siteResult.stratifiers = removeBronchoscopy(siteResult.stratifiers);
+
         setSiteResult(site, siteResult);
         updateDepartments(siteResult.stratifiers.Departments);
       } else {
@@ -219,6 +224,15 @@
       }
     });
   });
+
+  function removeBronchoscopy(
+    stratifiers: Record<string, Record<string, number>>,
+  ) {
+    let sample_kind_stratifier = stratifiers.sample_kind;
+    delete sample_kind_stratifier["Bronchoscopy"];
+    stratifiers.sample_kind = sample_kind_stratifier;
+    return stratifiers;
+  }
 </script>
 
 <div id="main-wrapper">
@@ -244,10 +258,10 @@
       <lens-catalogue toggle={{ collapsable: false }}></lens-catalogue>
     </div>
     <div id="main-grid">
-      <div id="result-summary" class="card">
-        <lens-result-summary></lens-result-summary>
-        <!-- <lens-search-modified-display></lens-search-modified-display> -->
-      </div>
+      <!-- <div id="result-summary" class="card"> -->
+      <!-- <lens-result-summary></lens-result-summary> -->
+      <!-- <!-- <lens-search-modified-display></lens-search-modified-display> -->
+      <!-- </div> -->
       <div id="department-table" class="card">
         <h4>Associated Members</h4>
         <table>
@@ -267,14 +281,14 @@
           </tbody>
         </table>
       </div>
-      <div class="card">
+      <!-- <div class="card">
         <lens-chart
           title="Gender distribution"
           dataKey="Gender"
           chartType="pie"
           displayLegends={true}
         ></lens-chart>
-      </div>
+      </div> -->
       <div class="card">
         <lens-chart
           title="Age distribution"
@@ -422,9 +436,9 @@
     grid-template-columns: repeat(4, 1fr);
     gap: var(--gap-xs);
 
-    #result-summary {
+    /*#result-summary {
       grid-column: 1 / -1;
-    }
+    }*/
 
     #department-table {
       table {
