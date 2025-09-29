@@ -211,6 +211,8 @@
         siteResult.stratifiers.diagnosis = groupDiagnoses(
           siteResult.stratifiers.diagnosis,
         );
+        siteResult.stratifiers = removeBronchoscopy(siteResult.stratifiers);
+
         setSiteResult(site, siteResult);
         updateDepartments(siteResult.stratifiers.Departments);
       } else {
@@ -222,6 +224,13 @@
       }
     });
   });
+
+  function removeBronchoscopy(stratifiers) {
+    let sample_kind_stratifier = stratifiers.sample_kind;
+    delete sample_kind_stratifier["Bronchoscopy"];
+    stratifiers.sample_kind = sample_kind_stratifier;
+    return stratifiers;
+  }
 </script>
 
 <div id="main-wrapper">
