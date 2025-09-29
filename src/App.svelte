@@ -244,10 +244,10 @@
       <lens-catalogue toggle={{ collapsable: false }}></lens-catalogue>
     </div>
     <div id="main-grid">
-      <div id="result-summary" class="card">
-        <lens-result-summary></lens-result-summary>
-        <!-- <lens-search-modified-display></lens-search-modified-display> -->
-      </div>
+      <!-- <div id="result-summary" class="card"> -->
+      <!-- <lens-result-summary></lens-result-summary> -->
+      <!-- <!-- <lens-search-modified-display></lens-search-modified-display> -->
+      <!-- </div> -->
       <div id="department-table" class="card">
         <h4>Associated Members</h4>
         <table>
@@ -267,14 +267,14 @@
           </tbody>
         </table>
       </div>
-      <div class="card">
+      <!-- <div class="card">
         <lens-chart
           title="Gender distribution"
           dataKey="Gender"
           chartType="pie"
           displayLegends={true}
         ></lens-chart>
-      </div>
+      </div> -->
       <div class="card">
         <lens-chart
           title="Age distribution"
