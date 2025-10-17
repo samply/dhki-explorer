@@ -164,19 +164,6 @@
     abortController.abort();
     abortController = new AbortController();
 
-    // AST to CQL translation
-    const cql = translateAstToCql(
-      getAst(),
-      false,
-      "DKTK_STRAT_DEF_IN_INITIAL_POPULATION",
-      measures,
-    );
-    const lib = buildLibrary(cql);
-    const measure = buildMeasure(
-      lib.url,
-      measures.map((m) => m.measure),
-    );
-
     clearSiteResults();
     resetDiagrams();
     updateChartVisibility();
@@ -188,9 +175,10 @@
 
     const query = base64Encode(
       JSON.stringify({
-        lang: "cql",
-        lib,
-        measure,
+        lang: "ast",
+        payload: base64Encode(
+          JSON.stringify({ ast: getAst(), id: crypto.randomUUID() }),
+        ),
       }),
     );
 

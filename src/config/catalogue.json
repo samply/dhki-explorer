@@ -67,7 +67,7 @@
     "fieldType": "group",
     "childCategories": [
       {
-        "key": "Organization",
+        "key": "department",
         "name": "Associated Members",
         "system": "",
         "fieldType": "single-select",
@@ -20159,7 +20159,7 @@
         "fieldType": "group",
         "childCategories": [
           {
-            "key": "21905-5",
+            "key": "TNM-T",
             "name": "TNM-T",
             "system": "",
             "fieldType": "single-select",
@@ -20328,7 +20328,7 @@
             ]
           },
           {
-            "key": "21906-3",
+            "key": "TNM-N",
             "name": "TNM-N",
             "system": "",
             "fieldType": "single-select",
@@ -20413,7 +20413,7 @@
             ]
           },
           {
-            "key": "21907-1",
+            "key": "TNM-M",
             "name": "TNM-M",
             "system": "",
             "fieldType": "single-select",
@@ -20466,7 +20466,7 @@
             ]
           },
           {
-            "key": "42030-7",
+            "key": "TNM-m-Symbol",
             "name": "TNM-m-Symbol",
             "system": "",
             "fieldType": "single-select",
@@ -20511,7 +20511,7 @@
             ]
           },
           {
-            "key": "59479-6",
+            "key": "TNM-y-Symbol",
             "name": "TNM-y-Symbol",
             "system": "",
             "fieldType": "single-select",
@@ -20528,7 +20528,7 @@
             ]
           },
           {
-            "key": "21983-2",
+            "key": "TNM-r-Symbol",
             "name": "TNM-r-Symbol",
             "system": "",
             "fieldType": "single-select",
