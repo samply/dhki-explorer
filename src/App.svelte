@@ -6,8 +6,6 @@
     getAst,
     clearSiteResults,
     resetDiagrams,
-    buildLibrary,
-    buildMeasure,
     querySpot,
     setSiteResult,
     markSiteClaimed,
@@ -19,8 +17,6 @@
   } from "@samply/lens";
   import options from "./config/options.json";
   import catalogue from "./config/catalogue.json";
-  import { measures } from "./lib/measures";
-  import { translateAstToCql } from "$lib/ast-to-cql-translator";
   import { env } from "$env/dynamic/public";
 
   onMount(() => {
