@@ -62,6 +62,7 @@ services:
       TRANSFORM: LENS
       RUST_LOG: "info"
       LOG_FILE: /logs/requests.log
+      PROJECT: "dhki"
     volumes:
       - ./logs:/logs
     depends_on:
