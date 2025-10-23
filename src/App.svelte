@@ -265,18 +265,18 @@
           </tbody>
         </table>
       </div>
-      <!-- <div class="card">
+      <div class="card">
         <lens-chart
           title="Gender distribution"
-          dataKey="Gender"
+          dataKey="gender"
           chartType="pie"
           displayLegends={true}
         ></lens-chart>
-      </div> -->
+      </div>
       <div class="card">
         <lens-chart
           title="Age distribution"
-          dataKey="Age"
+          dataKey="age_at_diagnosis"
           chartType="bar"
           backgroundColor={["#4dc9f6", "#3da4c7"]}
           xAxisTitle="Age"
@@ -287,7 +287,7 @@
       <div class="card">
         <lens-chart
           title="Type of therapy"
-          dataKey="ProcedureType"
+          dataKey="therapy_of_tumor"
           chartType="bar"
           backgroundColor={["#4dc9f6", "#3da4c7"]}
           xAxisTitle="Type of Therapy"
