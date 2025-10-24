@@ -53,7 +53,7 @@ services:
       - "traefik.http.routers.lens.middlewares=traefik-forward-auth"
 
   spot:
-    image: samply/rustyspot:main
+    image: samply/rustyspot:latest
     environment:
       BEAM_SECRET: "${LOCAL_BEAM_SECRET}"
       BEAM_PROXY_URL: http://beam-proxy:8081
