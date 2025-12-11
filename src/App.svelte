@@ -221,7 +221,7 @@
 
 <div id="main-wrapper">
   <header class="card">
-    <h1>DKFZ Hector Cancer Institute at the University Medicine Mannheim</h1>
+    <h1>DKFZ Hector Cancer Institute at University Medicine Mannheim</h1>
     <img src="../logo-dkfz.svg" alt="DKFZ" />
     <img src="../logo_umm.svg" alt="UMM" />
     <img src="../logo_mfm_ukm.svg" alt="MFM" />
@@ -352,9 +352,11 @@
   </div>
   <footer class="card">
     <p>
-      Made with ♥ and <a href="https://github.com/samply/lens">samply/lens</a>
+      Built with technologies provided by the
+      <a href="https://dktk.dkfz.de">German Cancer Consortium </a>
+      <img src="../logo-dktk-sign.svg" alt="DKTK" height="18px" /> and the
+      <a href="https://github.com/samply/">Samply Community</a>.
     </p>
-    <img src="../dktk-en.png" alt="DKTK" />
   </footer>
 </div>
 
@@ -446,7 +448,7 @@
 
   footer {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 
     img {
