@@ -7,7 +7,6 @@
       {
         "key": "consent-hki",
         "name": "Consent",
-        "system": "",
         "fieldType": "single-select",
         "type": "EQUALS",
         "criteria": [
@@ -20,7 +19,6 @@
       {
         "key": "gender",
         "name": "Gender",
-        "system": "",
         "fieldType": "single-select",
         "type": "EQUALS",
         "criteria": [
@@ -45,7 +43,6 @@
       {
         "key": "vitalStatus",
         "name": "Vital status",
-        "system": "http://dktk.dkfz.de/fhir/onco/core/CodeSystem/VitalstatusCS",
         "fieldType": "single-select",
         "type": "EQUALS",
         "criteria": [
@@ -69,7 +66,6 @@
       {
         "key": "department",
         "name": "Associated Members",
-        "system": "",
         "fieldType": "single-select",
         "type": "EQUALS",
         "criteria": [
@@ -122,7 +118,6 @@
           {
             "key": "gliom_all_groups",
             "name": "Gliomas, all groups",
-            "system": "",
             "fieldType": "single-select",
             "type": "EQUALS",
             "criteria": [
@@ -267,7 +262,6 @@
           {
             "key": "neuro_neoplasien",
             "name": "Neoplasms",
-            "system": "",
             "fieldType": "single-select",
             "type": "EQUALS",
             "criteria": [
@@ -418,7 +412,6 @@
           {
             "key": "neuro_tumorgruppen",
             "name": "Additional neuro-oncological tumor groups",
-            "system": "",
             "fieldType": "single-select",
             "type": "EQUALS",
             "criteria": [
@@ -543,7 +536,6 @@
           {
             "key": "gliosarkom",
             "name": "Gliosarcoma",
-            "system": "",
             "fieldType": "single-select",
             "type": "EQUALS",
             "criteria": [
@@ -586,7 +578,6 @@
           {
             "key": "zns_lymphom",
             "name": "CNS_Lymphoma",
-            "system": "",
             "fieldType": "single-select",
             "type": "EQUALS",
             "criteria": [
@@ -620,7 +611,6 @@
           {
             "key": "kopf_hals_ca",
             "name": "Head and Neck Cancer, all groups",
-            "system": "",
             "fieldType": "single-select",
             "type": "EQUALS",
             "criteria": [
@@ -1067,7 +1057,6 @@
           {
             "key": "cup",
             "name": "Cancer of unknown primary (CUP)",
-            "system": "",
             "fieldType": "single-select",
             "type": "EQUALS",
             "criteria": [
@@ -1155,7 +1144,6 @@
           {
             "key": "nsclc",
             "name": "NSCLC, all groups",
-            "system": "",
             "fieldType": "single-select",
             "type": "EQUALS",
             "criteria": [
@@ -1460,7 +1448,6 @@
           {
             "key": "sclc",
             "name": "SCLC (without neuroendocrine carcinoma)",
-            "system": "",
             "fieldType": "single-select",
             "type": "EQUALS",
             "criteria": [
@@ -1503,7 +1490,6 @@
           {
             "key": "neuro_ca",
             "name": "Neuroendocrine Carcinoma (without SCLC)",
-            "system": "",
             "fieldType": "single-select",
             "type": "EQUALS",
             "criteria": [
@@ -1546,7 +1532,6 @@
           {
             "key": "lungensarkom",
             "name": "Lung Sarcoma",
-            "system": "",
             "fieldType": "single-select",
             "type": "EQUALS",
             "criteria": [
@@ -1593,7 +1578,6 @@
           {
             "key": "thymom",
             "name": "Thymoma",
-            "system": "",
             "fieldType": "single-select",
             "type": "EQUALS",
             "criteria": [
@@ -1644,7 +1628,6 @@
           {
             "key": "mesotheliom",
             "name": "Malignant Mesothelioma",
-            "system": "",
             "fieldType": "single-select",
             "type": "EQUALS",
             "criteria": [
@@ -1690,7 +1673,6 @@
           {
             "key": "ösophagus",
             "name": "Esophageal/Gastric Junction Cancer, all groups",
-            "system": "",
             "fieldType": "single-select",
             "type": "EQUALS",
             "criteria": [
@@ -1859,7 +1841,6 @@
           {
             "key": "magen_tumore",
             "name": "Gastric Tumors, all groups",
-            "system": "",
             "fieldType": "single-select",
             "type": "EQUALS",
             "criteria": [
@@ -1984,7 +1965,6 @@
           {
             "key": "gastro_tumore",
             "name": "Gastrointestinal Tumors, all groups",
-            "system": "",
             "fieldType": "single-select",
             "type": "EQUALS",
             "criteria": [
@@ -2217,7 +2197,6 @@
           {
             "key": "leber_ca",
             "name": "Leber-Ca, alle Gruppen",
-            "system": "",
             "fieldType": "single-select",
             "type": "EQUALS",
             "criteria": [
@@ -2350,7 +2329,6 @@
           {
             "key": "pankreas_ca",
             "name": "Pancreatic Cancer, all groups",
-            "system": "",
             "fieldType": "single-select",
             "type": "EQUALS",
             "criteria": [
@@ -2471,7 +2449,6 @@
           {
             "key": "neuroendokrine_tumore_1_4",
             "name": "Neuroendocrine Tumors, Grade I to IV",
-            "system": "",
             "fieldType": "single-select",
             "type": "EQUALS",
             "criteria": [
@@ -2530,7 +2507,6 @@
           {
             "key": "neuroendokrine_tumorgruppen",
             "name": "Additional Neuroendocrine Tumor Groups",
-            "system": "",
             "fieldType": "single-select",
             "type": "EQUALS",
             "criteria": [
@@ -2551,7 +2527,6 @@
           {
             "key": "gist",
             "name": "Gastrointestinal Stromal Tumor (GIST)",
-            "system": "",
             "fieldType": "single-select",
             "type": "EQUALS",
             "criteria": [
@@ -2622,7 +2597,6 @@
           {
             "key": "malt_lymphom",
             "name": "MALT-Lymphom",
-            "system": "",
             "fieldType": "single-select",
             "type": "EQUALS",
             "criteria": [
@@ -2656,7 +2630,6 @@
           {
             "key": "mamma-ca",
             "name": "Mamma-Ca",
-            "system": "",
             "fieldType": "single-select",
             "type": "EQUALS",
             "criteria": [
@@ -2809,7 +2782,6 @@
           {
             "key": "gyn_tumore",
             "name": "Gynecological Tumors (excluding Ovarian)",
-            "system": "",
             "fieldType": "single-select",
             "type": "EQUALS",
             "criteria": [
@@ -3124,7 +3096,6 @@
           {
             "key": "ovarial_ca",
             "name": "Ovarian Cancer",
-            "system": "",
             "fieldType": "single-select",
             "type": "EQUALS",
             "criteria": [
@@ -3228,7 +3199,6 @@
           {
             "key": "penis_ca",
             "name": "Penile Cancer, all groups",
-            "system": "",
             "fieldType": "single-select",
             "type": "EQUALS",
             "criteria": [
@@ -3349,7 +3319,6 @@
           {
             "key": "prostata_ca",
             "name": "Prostate Cancer, all groups",
-            "system": "",
             "fieldType": "single-select",
             "type": "EQUALS",
             "criteria": [
@@ -3414,7 +3383,6 @@
           {
             "key": "net_prostata",
             "name": "NET (Prostata)",
-            "system": "",
             "fieldType": "single-select",
             "type": "EQUALS",
             "criteria": [
@@ -3441,7 +3409,6 @@
           {
             "key": "hoden_ca",
             "name": "Hoden-Ca, alle Gruppen",
-            "system": "",
             "fieldType": "single-select",
             "type": "EQUALS",
             "criteria": [
@@ -3558,7 +3525,6 @@
           {
             "key": "nierenzell-ca",
             "name": "Nierenzell-Ca, alle Gruppen",
-            "system": "",
             "fieldType": "single-select",
             "type": "EQUALS",
             "criteria": [
@@ -3671,7 +3637,6 @@
           {
             "key": "urothel_ca",
             "name": "Urothel-Ca",
-            "system": "",
             "fieldType": "single-select",
             "type": "EQUALS",
             "criteria": [
@@ -3718,7 +3683,6 @@
           {
             "key": "harnblasen_tumore",
             "name": "Harnblasen Tumore, alle Gruppen",
-            "system": "",
             "fieldType": "single-select",
             "type": "EQUALS",
             "criteria": [
@@ -3860,7 +3824,6 @@
           {
             "key": "malignes_melanom",
             "name": "Malignes Melanom",
-            "system": "",
             "fieldType": "single-select",
             "type": "EQUALS",
             "criteria": [
@@ -4049,7 +4012,6 @@
           {
             "key": "mukosales_melanom",
             "name": "Mukosales Melanom",
-            "system": "",
             "fieldType": "single-select",
             "type": "EQUALS",
             "criteria": [
@@ -4152,7 +4114,6 @@
           {
             "key": "basalzell_ca",
             "name": "Basalzell-Ca",
-            "system": "",
             "fieldType": "single-select",
             "type": "EQUALS",
             "criteria": [
@@ -4207,7 +4168,6 @@
           {
             "key": "plattenepithel_ca",
             "name": "Plattenepithel-Ca",
-            "system": "",
             "fieldType": "single-select",
             "type": "EQUALS",
             "criteria": [
@@ -4332,7 +4292,6 @@
           {
             "key": "sonstiger_hauttumor",
             "name": "Sonstiger Hauttumor",
-            "system": "",
             "fieldType": "single-select",
             "type": "EQUALS",
             "criteria": [
@@ -4447,7 +4406,6 @@
           {
             "key": "sarkom",
             "name": "Sarkom",
-            "system": "",
             "fieldType": "single-select",
             "type": "EQUALS",
             "criteria": [
@@ -4594,7 +4552,6 @@
           {
             "key": "lymphom",
             "name": "Lymphom",
-            "system": "",
             "fieldType": "single-select",
             "type": "EQUALS",
             "criteria": [
@@ -4676,7 +4633,6 @@
           {
             "key": "lymph_leukämie",
             "name": "Lymphatische Leukämie",
-            "system": "",
             "fieldType": "single-select",
             "type": "EQUALS",
             "criteria": [
@@ -4835,7 +4791,6 @@
           {
             "key": "akute_leukämie",
             "name": "akute Leukämie - gemischter Phänotyp",
-            "system": "",
             "fieldType": "single-select",
             "type": "EQUALS",
             "criteria": [
@@ -4878,7 +4833,6 @@
           {
             "key": "myeloische_leukämie",
             "name": "Myeloische Leukämie, alle Gruppen",
-            "system": "",
             "fieldType": "single-select",
             "type": "EQUALS",
             "criteria": [
@@ -5049,7 +5003,6 @@
           {
             "key": "myeloproliferative_erkrankung",
             "name": "Chronische myeloproliferative Erkrankung, alle Gruppen",
-            "system": "",
             "fieldType": "single-select",
             "type": "EQUALS",
             "criteria": [
@@ -5154,7 +5107,6 @@
           {
             "key": "myelodysplastisches_syndrom",
             "name": "Myelodysplastisches Syndrom",
-            "system": "",
             "fieldType": "single-select",
             "type": "EQUALS",
             "criteria": [
@@ -5237,7 +5189,6 @@
           {
             "key": "multiples_myelom",
             "name": "Multiples Myelom",
-            "system": "",
             "fieldType": "single-select",
             "type": "EQUALS",
             "criteria": [
@@ -5280,7 +5231,6 @@
           {
             "key": "nk_zell_leukämie",
             "name": "NK-Zell-Leukämie, aggressiv",
-            "system": "",
             "fieldType": "single-select",
             "type": "EQUALS",
             "criteria": [
@@ -5307,7 +5257,6 @@
           {
             "key": "hodgkin_lymphom",
             "name": "Hodgkin-Lymphom",
-            "system": "",
             "fieldType": "single-select",
             "type": "EQUALS",
             "criteria": [
@@ -5382,7 +5331,6 @@
           {
             "key": "burkitt_lymphom",
             "name": "Burkitt-Lymphom, alle Gruppen",
-            "system": "",
             "fieldType": "single-select",
             "type": "EQUALS",
             "criteria": [
@@ -5427,7 +5375,6 @@
           {
             "key": "non_hodgkin_lymphome",
             "name": "Non-Hodgkin-Lymphome, alle Gruppen",
-            "system": "",
             "fieldType": "single-select",
             "type": "EQUALS",
             "criteria": [
@@ -5740,7 +5687,6 @@
           {
             "key": "hämathologische_gruppen",
             "name": "weitere Hämathologische Gruppen",
-            "system": "",
             "fieldType": "single-select",
             "type": "EQUALS",
             "criteria": [
@@ -5918,7 +5864,6 @@
           {
             "key": "ewing_sarkom",
             "name": "Ewing-Sarkom",
-            "system": "",
             "fieldType": "single-select",
             "type": "EQUALS",
             "criteria": [
@@ -5999,7 +5944,6 @@
           {
             "key": "osteosarkom",
             "name": "Osteosarkom/Chondrsarkom",
-            "system": "",
             "fieldType": "single-select",
             "type": "EQUALS",
             "criteria": [
@@ -6034,7 +5978,6 @@
           {
             "key": "kaposi_sarkom",
             "name": "Kaposi-Sarkom",
-            "system": "",
             "fieldType": "single-select",
             "type": "EQUALS",
             "criteria": [
@@ -6065,7 +6008,6 @@
           {
             "key": "weichteilsarkome",
             "name": "Weichteilsarkome",
-            "system": "",
             "fieldType": "single-select",
             "type": "EQUALS",
             "criteria": [
@@ -6584,7 +6526,6 @@
           {
             "key": "undifferentierter_tumor",
             "name": "Undifferentiated/unclassified tumor",
-            "system": "",
             "fieldType": "single-select",
             "type": "EQUALS",
             "criteria": [
@@ -6627,7 +6568,6 @@
           {
             "key": "gastrointestinales_stromasarkom",
             "name": "Gastrointestinal stromal sarcoma",
-            "system": "",
             "fieldType": "single-select",
             "type": "EQUALS",
             "criteria": [
@@ -6712,7 +6652,6 @@
           {
             "key": "gliosarkoma",
             "name": "Gliosarkoma",
-            "system": "",
             "fieldType": "single-select",
             "type": "EQUALS",
             "criteria": [
@@ -6762,7 +6701,6 @@
           {
             "key": "blastome_alle_gruppen",
             "name": "Blastome, alle Gruppen",
-            "system": "",
             "fieldType": "single-select",
             "type": "EQUALS",
             "criteria": [
@@ -6964,7 +6902,6 @@
           {
             "key": "keimzellentumore_alle_gruppen",
             "name": "Germ Cell Tumors, all groups",
-            "system": "",
             "fieldType": "single-select",
             "type": "EQUALS",
             "criteria": [
@@ -7146,21 +7083,18 @@
       {
         "key": "year_of_diagnosis",
         "name": "Year of Diagnosis",
-        "system": "",
         "fieldType": "number",
         "type": "BETWEEN"
       },
       {
         "key": "age_at_diagnosis",
         "name": "Age at Diagnosis",
-        "system": "",
         "fieldType": "number",
         "type": "BETWEEN"
       },
       {
         "key": "diagnosis",
         "name": "Diagnose ICD-10",
-        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm",
         "fieldType": "autocomplete",
         "type": "EQUALS",
         "infoButtonText": [
@@ -13587,7 +13521,6 @@
       {
         "key": "conditionLocalization",
         "name": "Lokalisation (ICD-O-3 Klassifizierung)",
-        "system": "http://fhir.de/CodeSystem/bfarm/icd-10-gm",
         "fieldType": "autocomplete",
         "type": "EQUALS",
         "criteria": [
@@ -16806,7 +16739,6 @@
       {
         "key": "morphology",
         "name": "Morphologie ICD-O-3",
-        "system": "http://fhir.de/CodeSystem/dimdi/icd-10-gm",
         "fieldType": "autocomplete",
         "type": "EQUALS",
         "criteria": [
@@ -20010,7 +19942,6 @@
       {
         "key": "bodySite",
         "name": "Side location",
-        "system": "http://dktk.dkfz.de/fhir/onco/core/CodeSystem/SeitenlokalisationCS",
         "fieldType": "single-select",
         "type": "EQUALS",
         "criteria": [
@@ -20043,7 +19974,6 @@
       {
         "key": "uiccstadium",
         "name": "UICC Staging",
-        "system": "http://dktk.dkfz.de/fhir/onco/core/CodeSystem/UiccstadiumCS",
         "fieldType": "single-select",
         "type": "EQUALS",
         "criteria": [
@@ -20161,7 +20091,6 @@
           {
             "key": "TNM-T",
             "name": "TNM-T",
-            "system": "",
             "fieldType": "single-select",
             "type": "EQUALS",
             "criteria": [
@@ -20330,7 +20259,6 @@
           {
             "key": "TNM-N",
             "name": "TNM-N",
-            "system": "",
             "fieldType": "single-select",
             "type": "EQUALS",
             "criteria": [
@@ -20415,7 +20343,6 @@
           {
             "key": "TNM-M",
             "name": "TNM-M",
-            "system": "",
             "fieldType": "single-select",
             "type": "EQUALS",
             "criteria": [
@@ -20468,7 +20395,6 @@
           {
             "key": "TNM-m-Symbol",
             "name": "TNM-m-Symbol",
-            "system": "",
             "fieldType": "single-select",
             "type": "EQUALS",
             "criteria": [
@@ -20513,7 +20439,6 @@
           {
             "key": "TNM-y-Symbol",
             "name": "TNM-y-Symbol",
-            "system": "",
             "fieldType": "single-select",
             "type": "EQUALS",
             "criteria": [
@@ -20530,7 +20455,6 @@
           {
             "key": "TNM-r-Symbol",
             "name": "TNM-r-Symbol",
-            "system": "",
             "fieldType": "single-select",
             "type": "EQUALS",
             "criteria": [
@@ -20549,7 +20473,6 @@
       {
         "key": "local_assessment_residual_tumor",
         "name": "Local assessment residual tumor",
-        "system": "http://dktk.dkfz.de/fhir/onco/core/CodeSystem/LokaleBeurteilungResidualstatusCS",
         "fieldType": "single-select",
         "type": "EQUALS",
         "criteria": [
@@ -20582,7 +20505,6 @@
       {
         "key": "metastases_present",
         "name": "Distant metastases present",
-        "system": "",
         "fieldType": "single-select",
         "type": "EQUALS",
         "criteria": [
@@ -20595,7 +20517,6 @@
       {
         "key": "localization_metastases",
         "name": "Localization metastases",
-        "system": "http://dktk.dkfz.de/fhir/onco/core/CodeSystem/FMLokalisationCS",
         "fieldType": "single-select",
         "type": "EQUALS",
         "criteria": [
@@ -20659,7 +20580,6 @@
       {
         "key": "therapy-intention-hki",
         "name": "Intention of Therapy",
-        "system": "",
         "fieldType": "single-select",
         "type": "EQUALS",
         "criteria": [
@@ -20676,7 +20596,6 @@
       {
         "key": "OP",
         "name": "Operation",
-        "system": "",
         "fieldType": "single-select",
         "type": "EQUALS",
         "criteria": []
@@ -20684,7 +20603,6 @@
       {
         "key": "ST",
         "name": "Radiationtherapy",
-        "system": "",
         "fieldType": "single-select",
         "type": "EQUALS",
         "criteria": []
@@ -20697,7 +20615,6 @@
           {
             "key": "chemo-hki",
             "name": "Chemotherapy",
-            "system": "",
             "fieldType": "single-select",
             "type": "EQUALS",
             "criteria": [
@@ -20714,7 +20631,6 @@
           {
             "key": "immun-hki",
             "name": "Immunotherapy",
-            "system": "",
             "fieldType": "single-select",
             "type": "EQUALS",
             "criteria": [
@@ -20731,7 +20647,6 @@
           {
             "key": "targeted-therapy-hki",
             "name": "Targeted therapy",
-            "system": "",
             "fieldType": "single-select",
             "type": "EQUALS",
             "criteria": [
@@ -20757,7 +20672,6 @@
       {
         "key": "sample_kind",
         "name": "Type of Specimen",
-        "system": "",
         "fieldType": "single-select",
         "type": "EQUALS",
         "criteria": [

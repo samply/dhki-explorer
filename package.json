@@ -34,6 +34,6 @@
     "vite": "^7.3.0"
   },
   "dependencies": {
-    "@samply/lens": "^0.6.2"
+    "@samply/lens": "^0.6.3"
   }
 }
