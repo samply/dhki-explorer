@@ -13,7 +13,7 @@
     type SpotResult,
     type LensOptions,
     type Catalogue,
-    hideFailedSite,
+    removeFailedSite,
   } from "@samply/lens";
   import options from "./config/options.json";
   import catalogue from "./config/catalogue.json";
@@ -200,7 +200,7 @@
         setSiteResult(site, siteResult);
         updateDepartments(siteResult.stratifiers.Departments);
       } else {
-        hideFailedSite(site);
+        removeFailedSite(site);
         console.error(
           `Site ${site} failed with status ${result.status}:`,
           result.body,
