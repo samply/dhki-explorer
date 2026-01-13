@@ -222,7 +222,7 @@
 <div id="main-wrapper">
   <header class="card">
     <h1>DKFZ Hector Cancer Institute at University Medicine Mannheim</h1>
-    <img src="../logo-dkfz.svg" alt="DKFZ" />
+    <img src="../logo-dkfz.png" alt="DKFZ" />
     <img src="../logo_umm.svg" alt="UMM" />
     <img src="../logo_mfm_ukm.svg" alt="MFM" />
     <img src="../logo-hector.png" alt="Hector" />
@@ -385,7 +385,7 @@
     align-items: center;
 
     h1 {
-      color: var(--blue);
+      color: #006bb4;
     }
     img {
       max-height: 5rem;
