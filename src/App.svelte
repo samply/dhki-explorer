@@ -15,6 +15,7 @@
     type Catalogue,
     removeFailedSite,
   } from "@samply/lens";
+  import { v4 as uuidv4 } from "uuid";
   import options from "./config/options.json";
   import catalogue from "./config/catalogue.json";
   import { env } from "$env/dynamic/public";
@@ -172,9 +173,7 @@
     const query = base64Encode(
       JSON.stringify({
         lang: "ast",
-        payload: base64Encode(
-          JSON.stringify({ ast: getAst(), id: crypto.randomUUID() }),
-        ),
+        payload: base64Encode(JSON.stringify({ ast: getAst(), id: uuidv4() })),
       }),
     );
 
